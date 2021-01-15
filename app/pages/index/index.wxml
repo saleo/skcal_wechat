@@ -1,11 +1,17 @@
 <!--pages/index/index.wxml-->
-<view>
+<view class="container">
 
+    <view>
+        <image src="../../resources/sk2018.png"/>
+    </view>
     <picker mode='date' bindchange='change' value='={{month}}'>
         <view>{{month}}</view>
     </picker>
 
     <calendar value='{{month}}' bindchange='change' />
-
-    <view class='github-link'>https://github.com/shixianqin/wx-calendar</view>
+<view style="background-image:url(/resources/mdpi/ic_launcher_bg_transparent.png)；background-repeat:no-repeat">
+    清新格言
+</view>
+<view style="flex-direction:column">fafa</view>
+<view style="flex-direction:column">fafa</view>
 </view>
