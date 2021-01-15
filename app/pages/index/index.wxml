@@ -9,7 +9,7 @@
     </picker>
 
     <calendar value='{{month}}' bindchange='change' />
-<view style="background-image:url(/resources/mdpi/ic_launcher_bg_transparent.png)；background-repeat:no-repeat">
+<view class='imgBg'>
     清新格言
 </view>
 <view style="flex-direction:column">fafa</view>
