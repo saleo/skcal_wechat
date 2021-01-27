@@ -11,7 +11,7 @@ import festival from "./festival.js"
  * 缓存数据对象
  * @type {Object}
  */
-const CHACE = {},
+const CACHE = {},
 
     // 规定对应索引的相邻索引
     SIBLING = [{
@@ -197,7 +197,7 @@ function createView(dateStr, handler) {
         }
 
         view.push(item);
-    }
+    }    
 
     return {
         view,
@@ -240,7 +240,7 @@ class Calendar {
      * @return {Array}             日期数据列表
      */
     getMonthView(date, setCurrent) {
-        let view = CHACE[date] || (CHACE[date] = createView(date));
+        let view = CACHE[date] || (CACHE[date] = createView(date));
         if (setCurrent) {
             this.currentView = view;
             this.currentMonth = date;
