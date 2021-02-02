@@ -5,8 +5,7 @@
 
 import Lunar from "./lunar-calendar.js"
 import festival from "./festival.js"
-
-
+import fbi from "./skevents.js"
 /**
  * 缓存数据对象
  * @type {Object}
@@ -186,9 +185,15 @@ function createView(dateStr, handler) {
         // 当前日期字符串形式
         item.date = item.year + "-" + item.month + "-" + item.day;
 
+        //item.fbi= [index][summary,color,uid]
+        item.fbi=fbi['d'+item.year+toDouble(item.month)+toDouble(item.day)]
+        if (index<5){
+            console.log(item.fbi)
+        }
         // 标记今天
         if (item.date == todayStr) {
             item.isToday = true;
+            // console.log('fbi=',fbi['20190101']);
         }
 
         // 自定义处理器
