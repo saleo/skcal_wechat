@@ -146,7 +146,7 @@ Component({
 
             // 保存当前选择的 “日”
             calendar.currentDay = date.split("-")[2];
-
+            console.log(item.fbi);
             this.setDate(date);
         },
 

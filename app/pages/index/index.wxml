@@ -1,8 +1,8 @@
 <!--pages/index/index.wxml-->
 <view class="container">
 
-    <view>
-        <image src="../../resources/sk2018.png"/>
+    <view class="banner">
+        <image src="../../resources/sk2018.png" mode="widthFix"/>
     </view>
     <picker mode='date' bindchange='change' value='={{month}}'>
         <view>{{month}}</view>

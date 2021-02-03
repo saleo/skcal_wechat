@@ -187,9 +187,9 @@ function createView(dateStr, handler) {
 
         //item.fbi= [index][summary,color,uid]
         item.fbi=fbi['d'+item.year+toDouble(item.month)+toDouble(item.day)]
-        if (index<5){
-            console.log(item.fbi)
-        }
+        // if (index<5){
+        //     console.log(item.fbi)
+        // }
         // 标记今天
         if (item.date == todayStr) {
             item.isToday = true;

@@ -12,3 +12,7 @@ picker{
     color: #08f;
     padding: 10px;
 }
+
+.banner image {
+    width: 100%;
+}
