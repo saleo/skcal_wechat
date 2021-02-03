@@ -138,3 +138,7 @@ swiper.animate, swiper.animate .grid {
     font-size: 30rpx;
     color: #222;
 }
+
+.nodisplay{
+    display: none;
+}

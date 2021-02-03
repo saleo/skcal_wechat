@@ -186,7 +186,27 @@ function createView(dateStr, handler) {
         item.date = item.year + "-" + item.month + "-" + item.day;
 
         //item.fbi= [index][summary,color,uid]
-        item.fbi=fbi['d'+item.year+toDouble(item.month)+toDouble(item.day)]
+        item.fbi=fbi['d'+item.year+toDouble(item.month)+toDouble(item.day)];
+        item.color='';
+
+        if (item.fbi != undefined)
+        {
+            const iLen=Object.entries(item.fbi).length;
+            let sColor='';
+            for (let i=0;i<iLen;i++){
+                sColor = item.fbi['d'+i][1];
+                if (sColor=='red'){
+                    item.color='Red';
+                    break;
+                }
+                    
+                else if (sColor=='blue'){
+                    item.color='Blue';
+                }
+                else if (item.color!='Blue')
+                    item.color='Gray';
+            }
+}
         // if (index<5){
         //     console.log(item.fbi)
         // }
