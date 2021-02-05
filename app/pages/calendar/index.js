@@ -46,6 +46,7 @@ Component({
      */
     created() {
         this.calendar = new Calendar();
+        console.log('calendr=',this.calendar)        
     },
 
     /**
@@ -146,7 +147,7 @@ Component({
 
             // 保存当前选择的 “日”
             calendar.currentDay = date.split("-")[2];
-            console.log(item.fbi,item.color);
+            console.log(date);
             this.setDate(date);
         },
 
@@ -154,8 +155,11 @@ Component({
          * 设置激活日期状态，上传事件
          */
         setDate(date) {
+            
             if (date == "auto") {
+
                 let calendar = this.calendar;
+                // console.log('1=',calendar)
 
                 // 自动灵活设置日期
                 // 比如现在选择的是31号，切换到2月份，会自动选择 28 或者 29，因为2月份没有31号
@@ -164,6 +168,7 @@ Component({
                 }
                 date = calendar.currentMonth + "-" + calendar.currentDay;
             }
+            console.log('date=',date)
 
             this.setData({
                 currentDate: date

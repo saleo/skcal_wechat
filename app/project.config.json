@@ -23,6 +23,7 @@
     "compileHotReLoad": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -36,13 +37,12 @@
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "useApiHostProcess": false
+    "minifyWXSS": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.3.0",
-  "appid": "wxab4578864dd32f99",
-  "projectname": "wx-calendar",
+  "appid": "wx4f96fa767714d9a6",
+  "projectname": "skcal_wechat",
   "debugOptions": {
     "hidedInDevtools": []
   },

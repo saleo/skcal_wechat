@@ -1,8 +1,9 @@
 <!--pages/index/index.wxml-->
 <view class="container">
 
-    <view class="banner">
-        <image src="../../resources/sk2018.png" mode="widthFix"/>
+    <view class='banner'>
+        <text class="banner_text">{{month}}月</text>
+        <image src="../../resources/sk2021.png" mode="widthFix" class="banner_image"/>
     </view>
 
     <calendar value='{{month}}' bindchange='change' />

@@ -1,18 +1,22 @@
 /* pages/index/index.wxss */
-
-picker{
-    border: 1px solid #ccc;
-    margin: 10px;
-    text-align: center;
-    padding: 10px 0;
+.banner{
+    height: 100%;
+    position: relative;
 }
 
-.github-link{
-    font-size: 14px;
-    color: #08f;
-    padding: 10px;
-}
-
-.banner image {
+.banner_image {
     width: 100%;
+    z-index: 1;
+    /* position: absolute; */
 }
+
+.banner_text {
+    z-index: 100;
+    position: absolute;    
+    line-height: 200rpx;
+    color: green;
+    left: 5%;
+    top: 20%;
+    font-size: larger;
+}
+
