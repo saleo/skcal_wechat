@@ -7,9 +7,11 @@
     </view>
 
     <calendar value='{{year}}-{{month}}-{{day}}' bindchange='change' />
-<view class='imgBg'>
-    {{mottos_digest['y'+year][month][0]}}
-</view>
-<view style="flex-direction:column">{{mottos_digest['y'+year][month][1]}}</view>
-<view style="flex-direction:column">{{mottos_digest['y'+year][month][2]}}</view>
+
+    <view class='bottom'>
+        <text class="bottom_text1"> {{mottos_digest['y'+year][month][0]}}\n</text>
+        <text class="bottom_text2"> {{mottos_digest['y'+year][month][1]}}\n</text>
+        <text class="bottom_text3"> {{mottos_digest['y'+year][month][2]}}</text>
+        <image src='../../resources/bottom_bg_transparent1.png' class="bottom_image" mode="widthFix"/>
+    </view>
 </view>
