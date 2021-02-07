@@ -12,13 +12,15 @@ Page({
     data: {
         year: getToday()[0],
         month: getToday()[1],
+        day: getToday()[2],
         mottos_digest: skmottos_digest,
         mottos: skmottos
     },
 
     change(evt) {
         this.setData({
-            month: evt.detail.value
+            year: evt.detail.value.split('-')[0],
+            month: evt.detail.value.split('-')[1]
         });
     }
 

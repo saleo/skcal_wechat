@@ -1,5 +1,6 @@
 import Calendar from "./calendar.js"
 import WxTouch from "./wx-touch.js"
+import {getYearFromStr, getMonthFromStr,getDayFromStr } from "./calendar.js"
 
 Component({
     properties: {
@@ -166,7 +167,7 @@ Component({
                 if (calendar.currentDay > calendar.currentView.totalDay) {
                     calendar.currentDay = calendar.currentView.totalDay;
                 }
-                date = calendar.currentMonth + "-" + calendar.currentDay;
+                date = calendar.currentYear+'-'+ calendar.currentMonth + "-" + calendar.currentDay;
             }
             console.log('date=',date)
 
@@ -188,12 +189,13 @@ Component({
          */
         watchValue(date) {
             let calendar = this.calendar,
-                value = calendar.getValue(date);
-
+                // value = calendar.getValue(date);
+               y=getYearFromStr(date) ,m=getMonthFromStr(date);
+               console.log('==',y,m)
             // 根据视图类型使用不同的刷新机制
             this.setData(
                 this.data.viewType == "month" ?
-                calendar.refreshMonthViews(value.month) :
+                calendar.refreshMonthViews(y+'-'+m) :
                 calendar.refreshWeekViews(value.date)
             );
 
@@ -216,6 +218,7 @@ Component({
                     data = this.data,
                     trigger = false,
                     calendar = this.calendar;
+                    console.log('swipe..')
 
                 if (calendar.pressmoved) {
 

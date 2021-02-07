@@ -70,6 +70,23 @@ function getToday() {
     ]
 }
 
+function getCurrentYear(){
+    let date = new Date();
+    return date.getFullYear();
+}
+
+/*return year as integer*/
+function getYearFromStr(date){
+    return (date.split('-')[0])
+}
+
+function getMonthFromStr(date){
+    return (date.split('-')[1])
+}
+
+function getDayFromStr(date){
+    return (date.split('-')[2])
+}
 
 /**
  * 获取当前选择的日期距离顶部的高度
@@ -98,18 +115,20 @@ function getTotalDay(year, month) {
  * @param  {Function}
  * @return {Array}
  */
-function createView(dateStr, handler) {
+function createMonthView(dateYM, handler) {
 
     // 格式化日期, ios 只认识这样的：2018/9/9 ，不认识这样的：2018-9-9
     // 而且必须是 年/月/日，一个不能少
-    dateStr = (dateStr + "-1").split('-').join("/");
+    
+    let dateYMD = dateYM+'-1'
+    dateYMD.split('-').join("/");
 
     // 获取今天的日期
     let todayStr = getToday().join("-"),
-        date = new Date(dateStr),
+        date = new Date(dateYMD),
         year = date.getFullYear(),
         month = date.getMonth() + 1,
-        week = date.getDay(),
+        weekDay = date.getDay(),
 
         // 上一个月份
         prevYear = month > 1 ? year : year - 1,
@@ -123,10 +142,10 @@ function createView(dateStr, handler) {
         totalDay = getTotalDay(year, month),
 
         // 格子中，结束本月最大的日期
-        maxDay = totalDay + week,
+        maxDay = totalDay + weekDay,
 
         // 格子的开始日期
-        startDay = getTotalDay(prevYear, prevMonth) - week,
+        startDay = getTotalDay(prevYear, prevMonth) - weekDay,
 
         // 通过日期的数量，设置合适的格子数
         size = maxDay > 35 ? 42 : 35,
@@ -134,6 +153,7 @@ function createView(dateStr, handler) {
         index = 0,
         view = [];
 
+        console.log('createMonthView-month=',month)
     while (++index <= size) {
         let item, lunar;
 
@@ -146,13 +166,13 @@ function createView(dateStr, handler) {
                 day: index - maxDay,
                 type: "next"
             }
-        } else if (index > week) {
+        } else if (index > weekDay) {
 
             // 当前月份的数据
             item = {
                 year: year,
                 month: month,
-                day: index - week,
+                day: index - weekDay,
                 type: "current"
             }
         } else {
@@ -253,6 +273,7 @@ class Calendar {
         this.currentView = {};
         this.watchValue = false;
         this.changed = false;
+        this.currentYear= getCurrentYear();
     }
 
 
@@ -260,15 +281,15 @@ class Calendar {
 
     /**
      * 获取单个 “月” 视图，并且缓存
-     * @param  {String} date       传入年份+月份的字符串形式
+     * @param  {String} dateYM       传入年份+月份的字符串形式
      * @param  {Boolean} setCurrent 是否标记为当前数据
      * @return {Array}             日期数据列表
      */
-    getMonthView(date, setCurrent) {
-        let view = CACHE[date] || (CACHE[date] = createView(date));
+    getMonthView(dateYM, setCurrent) {
+        let view = CACHE[dateYM] || (CACHE[dateYM] = createMonthView(dateYM));
         if (setCurrent) {
             this.currentView = view;
-            this.currentMonth = date;
+            this.currentMonth = getMonthFromStr(dateYM);
             this.prevMonth = view.prevYear + "-" + view.prevMonth;
             this.nextMonth = view.nextYear + "-" + view.nextMonth;
         }
@@ -278,15 +299,15 @@ class Calendar {
 
     /**
      * 刷新 “月” 视图
-     * @param  {Stirng} date 传入年份+月份的字符串形式
+     * @param  {Stirng} dateYM 传入年份+月份的字符串形式
      * @return {Object}      日期视图列表，3个
      */
-    refreshMonthViews(date) {
+    refreshMonthViews(dateYM) {
         let views = [],
             sibling = SIBLING[this.index];
 
         // 标记每份数据应该存在的位置，这很重要
-        views[this.index] = this.getMonthView(date, true);
+        views[this.index] = this.getMonthView(dateYM, true);
         views[sibling.prev] = this.getMonthView(this.prevMonth);
         views[sibling.next] = this.getMonthView(this.nextMonth);
 
@@ -449,4 +470,5 @@ class Calendar {
 }
 
 
-export default Calendar;
+export default Calendar
+export {getYearFromStr,getMonthFromStr,getDayFromStr}

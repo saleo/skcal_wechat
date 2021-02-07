@@ -6,7 +6,7 @@
         <image src="../../resources/sk2021.png" mode="widthFix" class="banner_image"/>
     </view>
 
-    <calendar value='{{month}}' bindchange='change' />
+    <calendar value='{{year}}-{{month}}-{{day}}' bindchange='change' />
 <view class='imgBg'>
     {{mottos_digest['y'+year][month][0]}}
 </view>
