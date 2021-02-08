@@ -53,3 +53,19 @@
     left: 5%;
     font-size: medium; 
 }
+
+.bottom_text21 {
+    z-index: 100;
+    position: absolute;
+    top: 20%;    
+    left: 25%;
+    font-size: medium;
+}
+.bottom_text31 {
+    z-index: 100;
+    position: absolute; 
+    top: 50%  ; 
+    left: 25%;
+    font-size: medium; 
+    text-align: center;
+}
