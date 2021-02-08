@@ -4,7 +4,7 @@
 
 
     <view class='week-label-row'>
-        <view wx:for='{{weekLabel}}' wx:key='{{index}}'>
+        <view wx:for='{{weekLabel}}' wx:key='index'>
             {{item}}
         </view>
     </view>
@@ -27,7 +27,7 @@
 
         <swiper-item 
             wx:for='{{views}}' 
-            wx:key='{{index}}'
+            wx:key='index'
             >
 
             <view 
@@ -39,7 +39,7 @@
                     wx:for='{{item}}' 
                     wx:for-item='dayItem' 
                     wx:for-index='dayIndex' 
-                    wx:key='{{dayIndex}}' 
+                    wx:key='dayIndex' 
                     bindtap='selectDate'
                     data-data='{{dayItem}}'
                     class='item item-{{ dayItem.type }}{{ viewIndex == index && currentDate == dayItem.date ? " selected" : "" }}'
