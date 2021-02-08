@@ -20,8 +20,10 @@ Page({
     change(evt) {
         this.setData({
             year: evt.detail.value.split('-')[0],
-            month: evt.detail.value.split('-')[1]
+            month: evt.detail.value.split('-')[1],
+            day: evt.detail.value.split('-')[2] 
         });
+        console.log('change at page/index',this.data)
     }
 
 })

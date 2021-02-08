@@ -96,7 +96,7 @@ Component({
          */
         swiperFinish(evt) {
             let calendar = this.calendar;
-
+            console.log('swiper finsish')
             // 当视图发送变化，才会执行
             if (calendar.changed) {
 
@@ -169,7 +169,7 @@ Component({
                 }
                 date = calendar.currentYear+'-'+ calendar.currentMonth + "-" + calendar.currentDay;
             }
-            console.log('date=',date)
+            console.log('setDate date=',date)
 
             this.setData({
                 currentDate: date
@@ -191,7 +191,7 @@ Component({
             let calendar = this.calendar,
                 // value = calendar.getValue(date);
                y=getYearFromStr(date) ,m=getMonthFromStr(date);
-               console.log('==',y,m)
+               console.log('watch value y,m=',y,m)
             // 根据视图类型使用不同的刷新机制
             this.setData(
                 this.data.viewType == "month" ?
@@ -218,7 +218,7 @@ Component({
                     data = this.data,
                     trigger = false,
                     calendar = this.calendar;
-                    console.log('swipe..')
+                    console.log('swipe at wxTouch/date..')
 
                 if (calendar.pressmoved) {
 

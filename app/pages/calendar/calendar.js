@@ -262,7 +262,7 @@ function createMonthView(dateYM, handler) {
  */
 class Calendar {
     constructor() {
-        this.index = 0;
+        this.index = 0; // current view's index in the swiper
         this.currentMonth = "";
         this.prevMonth = "";
         this.nextMonth = "";
@@ -289,7 +289,8 @@ class Calendar {
         let view = CACHE[dateYM] || (CACHE[dateYM] = createMonthView(dateYM));
         if (setCurrent) {
             this.currentView = view;
-            this.currentMonth = getMonthFromStr(dateYM);
+            this.currentYear = view.year;
+            this.currentMonth = view.month; 
             this.prevMonth = view.prevYear + "-" + view.prevMonth;
             this.nextMonth = view.nextYear + "-" + view.nextMonth;
         }
@@ -325,13 +326,13 @@ class Calendar {
      */
     changeMonthViews(index) {
         let info = this.getChangeInfo(index),
-            month = info.direction + "Month";
-
+            changedToMonth = info.direction + "Month";
+        // console.log('month=', month,this[month]);//will output month= nextMonth 2021-3...
         // 设置为当前数据，1
-        this.getMonthView(this[month], true);
+        let view=this.getMonthView(this[changedToMonth], true);
 
         return {
-            ["views[" + info.index + "]"]: this.getMonthView(this[month]) // 修改对应的数据，2
+            ["views[" + info.index + "]"]: view // 修改对应的数据，2
         }
     }
 
