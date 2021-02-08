@@ -2,8 +2,11 @@
 <view class="container">
 
     <view class='banner'>
-        <text class="banner_text">{{month}}月</text>
-        <image src="../../resources/sk{{year}}.png" mode="widthFix" class="banner_image"/>
+        <text wx:if="{{year=='2020'||year=='2021'}}" class="banner_text">{{month}}月</text>
+        <text wx:else class="banner_text">{{month}}月{{year}}年</text> 
+
+        <image wx:if="{{year=='2020'||year=='2021'}}" src="../../resources/sk{{year}}.png" mode="widthFix" class="banner_image"/>
+        <image wx:else src="../../resources/sk_banner.png" mode="widthFix" class="banner_image"/>
     </view>
 
     <calendar value='{{year}}-{{month}}-{{day}}' bindchange='change' />
