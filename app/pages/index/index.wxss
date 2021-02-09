@@ -65,7 +65,7 @@
     z-index: 100;
     position: absolute; 
     top: 50%  ; 
-    left: 25%;
-    font-size: medium; 
+    left: 30%;
+    font-size: small; 
     text-align: center;
 }

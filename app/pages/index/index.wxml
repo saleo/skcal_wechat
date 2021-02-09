@@ -7,7 +7,8 @@
             <image src="../../resources/sk{{year}}.png" mode="widthFix" class="banner_image"/>
         </block>
         <block wx:else>
-            <image src="../../resources/sk_banner.png" mode="widthFix" class="banner_image"/>
+            <text class="banner_text">{{year}}年{{month}}月</text> 
+            <image src="../../resources/skall.png" mode="widthFix" class="banner_image"/>
         </block>
     </view>
 
@@ -21,8 +22,8 @@
             <image src='../../resources/bottom_bg_transparent1.png' class="bottom_image" mode="widthFix"/>
         </block>
         <block wx:else>
-            <rich-text nodes="{{htmlSnip}}" class="bottom_text21"></rich-text>
-            <text class="bottom_text31"> 商丘市寿康文化研究学会 {{year}}</text>                        
+            <text class="bottom_text21"> 商丘市寿康文化研究学会 {{year}}</text>                        
+            <rich-text nodes="{{htmlSnip}}" class="bottom_text31"></rich-text>
             <image src='../../resources/bottom_bg_transparent21.png' class="bottom_image" mode="widthFix"/>            
         </block>
     </view>
