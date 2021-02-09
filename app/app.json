@@ -8,5 +8,8 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap99.json"
+  "sitemapLocation": "sitemap99.json",
+  "useExtendedLib": {
+    "weui": true
+  }
 }

@@ -12,7 +12,7 @@
         </block>
     </view>
 
-    <calendar value='{{year}}-{{month}}-{{day}}' bindchange='change' />
+    <calendar value='{{year}}-{{month}}-{{day}}' bindchange='change' bindprompt='prompt'/>
 
     <view class='bottom'>
         <block wx:if="{{year=='2020'||year=='2021'}}">
@@ -28,3 +28,12 @@
         </block>
     </view>
 </view>
+<mp-half-screen-dialog 
+  bindbuttontap="halfScreenBtnTap"
+  show="{{show}}"
+  maskClosable="{{false}}" 
+  title="戒期信息" 
+  subTitle="{{year}}-{{month}}-{{day}}"
+  desc="{{fbiDesc}}"
+  buttons="{{buttons}}"
+></mp-half-screen-dialog>

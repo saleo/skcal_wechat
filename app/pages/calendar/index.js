@@ -148,8 +148,11 @@ Component({
 
             // 保存当前选择的 “日”
             calendar.currentDay = date.split("-")[2];
-            console.log(date);
+            console.log('selectDate=',date);
             this.setDate(date);
+            if (item.fbi != undefined){
+                this.triggerEvent('prompt',{value:item.fbi},{bubbles:true,composed:true});  
+            }
         },
 
         /**

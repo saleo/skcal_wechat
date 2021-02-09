@@ -1,5 +1,6 @@
 {
     "usingComponents": {
-        "calendar": "../calendar/index"
+        "calendar": "../calendar/index",
+        "mp-half-screen-dialog": "weui-miniprogram/half-screen-dialog/half-screen-dialog"
     }
 }
