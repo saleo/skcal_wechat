@@ -17,17 +17,13 @@ Page({
         day: getToday()[2],
         mottos_digest: skmottos_digest,
         mottos: skmottos,
+        mottos4Month: "",
         htmlSnip,
         fbi_show: false,
-        buttons:[{
-            type: 'default',
-            className: '',
-            text: '好的',
-            value: 0
-        }],
+        mottos_show: false,
         //forbidden information
         fbiDesc:"",
-        lunarDateMD:""
+        lunarDateMD:"",
     },
 
     change(evt) {
@@ -56,9 +52,15 @@ Page({
         });
     },
 
-    fbi_halfScreenBtnTap(e) {
+    mottosDigestTap(e) {
+        console.log('mottes taped',this.data.year)
+        let y='y'+this.data.year,m=this.data.month,
+        mottos1 = this.data.mottos[y][m].join('\n\n');
+        console.log(mottos1)
         this.setData({
-            fbi_show: false,
+            mottos_show: true,
+            mottos4Month: mottos1
         })
-    }
+    },
+
 })
