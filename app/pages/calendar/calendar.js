@@ -192,7 +192,12 @@ function createMonthView(dateYM, handler) {
         // 获取对应的日历标签（节日，节气，农历中文）
         item.label = festival.lunar["d" + toDouble(lunar.lMonth) + toDouble(lunar.lDay)] ||
             festival.solar["d" + toDouble(item.month) + toDouble(item.day)] ||
-            lunar.Term || lunar.IDayCn;
+            lunar.Term ;
+        
+        if  (lunar.lDay==1)  
+            item.label =item.label || lunar.IMonthCn
+        else
+            item.label =item.label || lunar.IDayCn;
 
         item.lunar = lunar;
 
