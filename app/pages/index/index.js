@@ -18,7 +18,7 @@ Page({
         mottos_digest: skmottos_digest,
         mottos: skmottos,
         htmlSnip,
-        show: false,
+        fbi_show: false,
         buttons:[{
             type: 'default',
             className: '',
@@ -39,7 +39,7 @@ Page({
         });
     },
 
-    prompt(evt) {
+    fbi_prompt(evt) {
         // console.log('prompt=',evt.detail)
         let fbi=evt.detail.value.fbi;
         let lunar=evt.detail.value.lunar;
@@ -50,15 +50,15 @@ Page({
         }
         console.log('lunar=',lunar)
         this.setData({
-            show: true,
+            fbi_show: true,
             fbiDesc: desc,
             lunarDateMD: lunar['IMonthCn']+lunar['IDayCn']
         });
     },
 
-    halfScreenBtnTap(e) {
+    fbi_halfScreenBtnTap(e) {
         this.setData({
-            show: false,
+            fbi_show: false,
         })
     }
 })

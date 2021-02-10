@@ -12,7 +12,7 @@
         </block>
     </view>
 
-    <calendar value='{{year}}-{{month}}-{{day}}' bindchange='change' bindprompt='prompt'/>
+    <calendar value='{{year}}-{{month}}-{{day}}' bindchange='change' bindfbi_prompt='fbi_prompt'/>
 
     <view class='bottom'>
         <block wx:if="{{year=='2020'||year=='2021'}}">
@@ -29,8 +29,8 @@
     </view>
 </view>
 <mp-half-screen-dialog 
-  bindbuttontap="halfScreenBtnTap"
-  show="{{show}}"
+  bindbuttontap="fbi_halfScreenBtnTap"
+  show="{{fbi_show}}"
   title="戒期信息" 
   buttons="{{buttons}}"
   subTitle="{{year}}-{{month}}-{{day}},{{lunarDateMD}}">
