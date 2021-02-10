@@ -4,7 +4,7 @@
 
 
     <view class='week-label-row'>
-        <view wx:for='{{weekLabel}}' wx:key='index'>
+        <view wx:for='{{weekLabel}}' wx:key='index' class='week-label-item'>
             {{item}}
         </view>
     </view>

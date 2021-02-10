@@ -30,7 +30,7 @@ swiper.animate, swiper.animate .grid {
     transition: all 0.3s;
 }
 
-.week-view swiper {
+.week-view .placeholderleo {
     height: 120rpx;
 }
 
@@ -45,7 +45,7 @@ swiper.animate, swiper.animate .grid {
     height: 600rpx;
 }
 
-.item, .week-label-row view {
+.item, .week-label-row .week-label-item {
     max-width: 14.286%;
     flex: 0 0 14.286%;
     text-align: center;
@@ -134,7 +134,7 @@ swiper.animate, swiper.animate .grid {
     line-height: 40rpx;
 }
 
-.week-label-row view {
+.week-label-row .week-label-item {
     font-size: 30rpx;
     color: #222;
 }
