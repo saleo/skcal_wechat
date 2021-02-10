@@ -151,7 +151,7 @@ Component({
             console.log('selectDate=',date);
             this.setDate(date);
             if (item.fbi != undefined){
-                this.triggerEvent('prompt',{value:item.fbi},{bubbles:true,composed:true});  
+                this.triggerEvent('prompt',{value:item},{bubbles:true,composed:true});  
             }
         },
 

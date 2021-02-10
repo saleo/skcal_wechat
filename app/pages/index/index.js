@@ -22,11 +22,12 @@ Page({
         buttons:[{
             type: 'default',
             className: '',
-            text: 'ok',
+            text: '好的',
             value: 0
         }],
         //forbidden information
-        fbiDesc:""
+        fbiDesc:"",
+        lunarDateMD:""
     },
 
     change(evt) {
@@ -39,17 +40,19 @@ Page({
     },
 
     prompt(evt) {
-        console.log('prompt=',evt.detail)
-        let fbi=evt.detail.value;
+        // console.log('prompt=',evt.detail)
+        let fbi=evt.detail.value.fbi;
+        let lunar=evt.detail.value.lunar;
         const iLen=Object.entries(fbi).length;
         let desc="";
         for (let i=0;i<iLen;i++){
-            desc=desc+fbi['d'+i][0]+','
+            desc=desc+fbi['d'+i][0]+'\n'
         }
-        console.log('desc',desc)
+        console.log('lunar=',lunar)
         this.setData({
             show: true,
-            fbiDesc: desc
+            fbiDesc: desc,
+            lunarDateMD: lunar['IMonthCn']+lunar['IDayCn']
         });
     },
 

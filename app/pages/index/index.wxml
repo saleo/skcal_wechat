@@ -31,9 +31,11 @@
 <mp-half-screen-dialog 
   bindbuttontap="halfScreenBtnTap"
   show="{{show}}"
-  maskClosable="{{false}}" 
   title="戒期信息" 
-  subTitle="{{year}}-{{month}}-{{day}}"
-  desc="{{fbiDesc}}"
   buttons="{{buttons}}"
-></mp-half-screen-dialog>
+  subTitle="{{year}}-{{month}}-{{day}},{{lunarDateMD}}">
+    <view slot='desc'>
+        <text>{{fbiDesc}}</text>
+    </view>
+
+</mp-half-screen-dialog>
