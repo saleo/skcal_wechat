@@ -47,7 +47,6 @@ Component({
      */
     created() {
         this.calendar = new Calendar();
-        console.log('calendr=',this.calendar)        
     },
 
     /**

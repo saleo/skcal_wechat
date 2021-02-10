@@ -27,7 +27,6 @@ Page({
     },
 
     change(evt) {
-        console.log('change triggered')
         this.setData({
             year: evt.detail.value.split('-')[0],
             month: evt.detail.value.split('-')[1],
@@ -36,7 +35,6 @@ Page({
     },
 
     fbi_prompt(evt) {
-        // console.log('prompt=',evt.detail)
         let fbi=evt.detail.value.fbi;
         let lunar=evt.detail.value.lunar;
         const iLen=Object.entries(fbi).length;
@@ -44,7 +42,6 @@ Page({
         for (let i=0;i<iLen;i++){
             desc=desc+fbi['d'+i][0]+'\n'
         }
-        console.log('lunar=',lunar)
         this.setData({
             fbi_show: true,
             fbiDesc: desc,
@@ -53,10 +50,8 @@ Page({
     },
 
     mottosDigestTap(e) {
-        console.log('mottes taped',this.data.year)
         let y='y'+this.data.year,m=this.data.month,
         mottos1 = this.data.mottos[y][m].join('\n\n');
-        console.log(mottos1)
         this.setData({
             mottos_show: true,
             mottos4Month: mottos1
