@@ -274,7 +274,7 @@ class Calendar {
         this.currentWeek = "";
         this.prevWeek = "";
         this.nextWeek = "";
-        this.currentDay = 1;
+        this.currentDay = getToday()[2];
         this.currentView = {};
         this.watchValue = false;
         this.changed = false;
