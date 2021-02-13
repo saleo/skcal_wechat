@@ -158,7 +158,7 @@ Component({
          * 设置激活日期状态，上传事件
          */
         setDate(date) {
-            
+            const DAY0=0  //placeholder ,intentionally for make day unmatch when swipe 
             if (date == "auto") {
 
                 let calendar = this.calendar;
@@ -169,7 +169,7 @@ Component({
                 if (calendar.currentDay > calendar.currentView.totalDay) {
                     calendar.currentDay = calendar.currentView.totalDay;
                 }
-                date = calendar.currentYear+'-'+ calendar.currentMonth + "-" + calendar.currentDay;
+                date = calendar.currentYear+'-'+ calendar.currentMonth + "-" + DAY0;
             }
             console.log('setDate date=',date)
 
@@ -201,7 +201,7 @@ Component({
                 calendar.refreshWeekViews(value.date)
             );
 
-            this.setDate("auto");
+            this.setDate(date);
         },
 
 
