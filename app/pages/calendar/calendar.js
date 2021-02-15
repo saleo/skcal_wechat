@@ -337,7 +337,7 @@ class Calendar {
         let view=this.getMonthView(this[changedToMonth], true);
 
         return {
-            ["views[" + info.index + "]"]: view // 修改对应的数据，2
+            ["views[" + index + "]"]: view // 修改对应的数据，2
         }
     }
 
