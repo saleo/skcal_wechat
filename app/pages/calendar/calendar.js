@@ -477,4 +477,4 @@ class Calendar {
 
 
 export default Calendar
-export {getYearFromStr,getMonthFromStr,getDayFromStr}
+export {getYearFromStr,getMonthFromStr,getDayFromStr,getToday}

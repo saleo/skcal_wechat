@@ -1,6 +1,6 @@
 import Calendar from "./calendar.js"
 import WxTouch from "./wx-touch.js"
-import {getYearFromStr, getMonthFromStr,getDayFromStr } from "./calendar.js"
+import {getYearFromStr, getMonthFromStr,getDayFromStr,getToday } from "./calendar.js"
 
 Component({
     properties: {
@@ -101,7 +101,12 @@ Component({
 
                 // 滑动结束后，自动设置日期
                 if (evt.detail.source == "touch") {
-                    this.setDate(this.data.viewType == "week" ? calendar.currentWeek : "auto");
+                    let dateToset = "auto",todayYMD=getToday();
+                    if (todayYMD[1] == calendar.currentMonth){
+                        dateToset = todayYMD.join('-')
+                    }
+                                        
+                    this.setDate(this.data.viewType == "week" ? calendar.currentWeek : dateToset);
                 }
 
                 // 重置标记
