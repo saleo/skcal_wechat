@@ -14,7 +14,24 @@
 
     <calendar value='{{year}}-{{month}}-{{day}}' bindchange='change' bindfbi_prompt='fbi_prompt'/>
 
+
+    <view class="op_navigate_bar">
+        <view class="hr_divider"></view>
+        <navigator url="navigate?title=123" class="op_navigator_left">
+            <image src="../../resources/info.png" class="op_image" />
+        </navigator>
+        <navigator url="navigate?title=123">
+            <image src="../../resources/today.png" class="op_image" />
+        </navigator>               
+        <navigator url="navigate?title=123">
+            <image src="../../resources/settings.png" class="op_image" />
+        </navigator>
+        <view class="hr_divider"></view>
+    </view>
+
     <view class='bottom'>
+
+
         <block wx:if="{{year=='2020'||year=='2021'}}">
             <text class="bottom_text1" bindtap="mottosDigestTap"> {{mottos_digest['y'+year][month][0]}}\n</text>
             <text class="bottom_text2" bindtap="mottosDigestTap"> {{mottos_digest['y'+year][month][1]}}\n</text>

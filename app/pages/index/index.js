@@ -3,6 +3,7 @@ import skmottos_digest from '../../resources/skmottos_digest.js'
 import skmottos from '../../resources/skmottos.js'
 
 const htmlSnip ="<div align='center'><a hrer='https://www.shoukang.org'>https://www.shoukang.org</a></div>"
+const hr="<hr color='red' />"
 
 function getToday() {
     let date = new Date();
@@ -24,6 +25,7 @@ Page({
         //forbidden information
         fbiDesc:"",
         lunarDateMD:"",
+        htmlSnip: htmlSnip
     },
 
     change(evt) {

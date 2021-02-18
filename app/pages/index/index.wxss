@@ -20,6 +20,24 @@
     font-size: larger;
 }
 
+.op_navigate_bar{
+    display: flex;
+    justify-content: space-between ;
+}
+
+.hr_divider{
+    width: 25%;
+    height: 2rpx;
+    background-color: green;
+    margin: 20rpx;
+    /* border-bottom: 2rpx green solid; */
+}
+
+.op_image{
+    height: 20px;
+    width: 20px;
+    margin: 15px,15px;
+}
 .bottom{
     height: fit-content;
     position: relative;
