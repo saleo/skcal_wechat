@@ -10,8 +10,8 @@
 
     <calendar value='{{year}}-{{month}}-{{day}}' bindchange='change' bindfbi_prompt='fbi_prompt'/>
 
-    <template is="op_navigate_bar" />
-
+    <view class="hr_divider"></view>
+    
     <template is="foot_mottos" data="{{mottos_digest:mottos_digest,year:year,month:month}}" />
 
 </view>

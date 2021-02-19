@@ -26,10 +26,10 @@
 }
 
 .hr_divider{
-    width: 25%;
+    width: 85%;
     height: 2rpx;
     background-color: green;
-    margin: 20rpx;
+    /* margin: 20rpx; */
     /* border-bottom: 2rpx green solid; */
 }
 
