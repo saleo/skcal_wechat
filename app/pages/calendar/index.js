@@ -213,48 +213,48 @@ Component({
         /**
          * 自定义手势事件
          */
-        ...WxTouch("Touch", {
-            swipeVelocity: false,
+        // ...WxTouch("Touch", {
+        //     swipeVelocity: false,
 
-            pressmove(evt) {
-                this.calendar.pressmoved = true;
-            },
+        //     pressmove(evt) {
+        //         this.calendar.pressmoved = true;
+        //     },
 
-            swipe(evt) {
-                let setData = {},
-                    data = this.data,
-                    trigger = false,
-                    calendar = this.calendar;
-                    console.log('swipe at wxTouch/date..')
+        //     swipe(evt) {
+        //         let setData = {},
+        //             data = this.data,
+        //             trigger = false,
+        //             calendar = this.calendar;
+        //             console.log('swipe at wxTouch/date..')
 
-                if (calendar.pressmoved) {
+        //         if (calendar.pressmoved) {
 
-                    // 向上滑动更新为 “周” 视图，向下为 “月” 视图
-                    if (evt.direction == "up" && data.viewType == "month") {
-                        setData = calendar.refreshWeekViews(data.currentDate);
-                        setData.viewType = "week";
-                        trigger = true;
-                    } else if (evt.direction == "down" && data.viewType == "week") {
-                        setData = calendar.refreshMonthViews(calendar.currentMonth);
-                        setData.viewType = "month";
-                        setData.topValues = [0, 0, 0];
-                        trigger = true;
-                    }
+        //             // 向上滑动更新为 “周” 视图，向下为 “月” 视图
+        //             if (evt.direction == "up" && data.viewType == "month") {
+        //                 setData = calendar.refreshWeekViews(data.currentDate);
+        //                 setData.viewType = "week";
+        //                 trigger = true;
+        //             } else if (evt.direction == "down" && data.viewType == "week") {
+        //                 setData = calendar.refreshMonthViews(calendar.currentMonth);
+        //                 setData.viewType = "month";
+        //                 setData.topValues = [0, 0, 0];
+        //                 trigger = true;
+        //             }
 
-                    setData.animate = "animate";
+        //             setData.animate = "animate";
 
-                    this.setData(setData);
+        //             this.setData(setData);
 
-                    // 切换视图后上传事件
-                    if (trigger) {
-                        this.triggerEvent("viewchange", {
-                            viewType: setData.viewType
-                        })
-                    }
+        //             // 切换视图后上传事件
+        //             if (trigger) {
+        //                 this.triggerEvent("viewchange", {
+        //                     viewType: setData.viewType
+        //                 })
+        //             }
 
-                    calendar.pressmoved = false;
-                }
-            }
-        })
+        //             calendar.pressmoved = false;
+        //         }
+        //     }
+        // })
     }
 })

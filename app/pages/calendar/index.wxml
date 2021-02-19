@@ -17,10 +17,6 @@
         bindchange='swiperChange'
         bindanimationfinish='swiperFinish'
         bindtransitionend='transitionEnd'
-        bindtouchstart='startTouch' 
-        bindtouchmove='moveTouch' 
-        bindtouchend='endTouch' 
-        bindtouchcancel='cancelTouch'
         class='mySwiper'
         >
         
