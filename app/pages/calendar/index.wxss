@@ -5,12 +5,12 @@
     position: relative;
 }
 
-swiper {
+.mySwiper {
     height: 600rpx;
     position: relative;
 }
 
-.hide-edge swiper:before, .hide-edge swiper:after {
+/* .hide-edge swiper:before, .hide-edge swiper:after {
     content: "";
     position: absolute;
     left: 0;
@@ -19,16 +19,16 @@ swiper {
     width: 100%;
     background: #fcfcfc;
     z-index: 10;
-}
+} */
 
-.hide-edge swiper:after {
+/* .hide-edge swiper:after {
     top: auto;
     bottom: 0;
-}
+} */
 
-swiper.animate, swiper.animate .grid {
+/* swiper.animate, swiper.animate .grid {
     transition: all 0.3s;
-}
+} */
 
 .week-view .placeholderleo {
     height: 120rpx;
