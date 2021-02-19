@@ -2,6 +2,7 @@
 <import src="../../commons/head.wxml" />
 <import src="../../commons/foot_mottos.wxml" />
 <import src="../../commons/utils.wxml" />
+<import src="../../commons/op_navigate_bar.wxml" />
 
 <view class="container">
 
@@ -9,20 +10,7 @@
 
     <calendar value='{{year}}-{{month}}-{{day}}' bindchange='change' bindfbi_prompt='fbi_prompt'/>
 
-
-    <view class="op_navigate_bar">
-        <view class="hr_divider"></view>
-        <navigator url="navigate?title=123" class="op_navigator_left">
-            <image src="../../resources/info.png" class="op_image" />
-        </navigator>
-        <navigator url="navigate?title=123">
-            <image src="../../resources/today.png" class="op_image" />
-        </navigator>               
-        <navigator url="navigate?title=123">
-            <image src="../../resources/settings.png" class="op_image" />
-        </navigator>
-        <view class="hr_divider"></view>
-    </view>
+    <template is="op_navigate_bar" />
 
     <template is="foot_mottos" data="{{mottos_digest:mottos_digest,year:year,month:month}}" />
 

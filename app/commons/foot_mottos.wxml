@@ -1,0 +1,15 @@
+<template name="foot_mottos">
+  <view class='bottom'>
+        <block wx:if="{{year=='2020'||year=='2021'}}">
+            <text class="bottom_text1" bindtap="mottosDigestTap"> {{mottos_digest['y'+year][month][0]}}\n</text>
+            <text class="bottom_text2" bindtap="mottosDigestTap"> {{mottos_digest['y'+year][month][1]}}\n</text>
+            <text class="bottom_text3" bindtap="mottosDigestTap"> {{mottos_digest['y'+year][month][2]}}</text>
+            <image src='../../resources/bottom_bg_transparent1.png' class="bottom_image" mode="widthFix"/>
+        </block>
+        <block wx:else>
+            <text class="bottom_text21"> 商丘市寿康文化研究学会 {{year}}</text>                        
+            <rich-text nodes="{{htmlSnip}}" class="bottom_text31"></rich-text>
+            <image src='../../resources/bottom_bg_transparent21.png' class="bottom_image" mode="widthFix"/>            
+        </block>
+    </view>
+</template>

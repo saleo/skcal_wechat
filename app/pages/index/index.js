@@ -19,13 +19,16 @@ Page({
         mottos_digest: skmottos_digest,
         mottos: skmottos,
         mottos4Month: "",
-        htmlSnip,
         fbi_show: false,
         mottos_show: false,
         //forbidden information
         fbiDesc:"",
         lunarDateMD:"",
         htmlSnip: htmlSnip
+    },
+
+    onLoad(){
+        console.log('onload...ymd=',this.data.year,this.data.month,this.data.day)
     },
 
     change(evt) {

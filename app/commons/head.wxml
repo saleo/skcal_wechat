@@ -1,0 +1,12 @@
+<template name="head">
+    <view class='banner'>
+        <block wx:if="{{year=='2020'||year=='2021'}}">
+            <text class="banner_text">{{month}}月</text>
+            <image src="../../resources/sk{{year}}.png" mode="widthFix" class="banner_image"/>
+        </block>
+        <block wx:else>
+            <text class="banner_text">{{year}}年{{month}}月</text> 
+            <image src="../../resources/skall.png" mode="widthFix" class="banner_image"/>
+        </block>
+    </view>
+</template>
