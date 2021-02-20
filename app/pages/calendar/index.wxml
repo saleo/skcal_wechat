@@ -44,9 +44,7 @@
                     <view class='inner{{ indicator[dayItem.date] ? " indicator indicator-" + themeColors[indicator[dayItem.date]] : "" }}'>
                         <view class='solar-day-label'>{{dayItem.day}}</view>
                         <view class='lunar-day-label'>{{dayItem.label}}</view>
-                        <view class='{{dayItem.color ==""? "nodisplay":"group"}}'>
-                            <icon type="info" color="{{dayItem.color}}" size="10"/>
-                        </view>
+                        <view class='{{dayItem.color ==""? "nodisplay":"circle_"+dayItem.color}}' />
                    </view>
 
                 </view>

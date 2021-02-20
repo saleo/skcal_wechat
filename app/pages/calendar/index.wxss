@@ -6,7 +6,7 @@
 }
 
 .mySwiper {
-    height: 0rpx;
+    height: 600rpx;
     position: relative;
 }
 
@@ -58,7 +58,7 @@
     height: 86rpx;
     border-radius: 50rpx;
     display: inline-block;
-    padding: 15rpx 0;
+    padding: 5rpx 0;
     box-sizing: border-box;
     position: relative;
 }
@@ -103,7 +103,7 @@
 
 .lunar-day-label {
     height: 26rpx;
-    font-size: 20rpx;
+    font-size: 26rpx;
     line-height: 26rpx;
     color: #828282;
     white-space: nowrap;
@@ -111,6 +111,9 @@
     overflow: hidden;
 }
 
+.indicator_view {
+    height: 10rpx;
+}
 /* 激活样式 */
 
 .week-view .selected .inner, .item-current.selected .inner {
@@ -141,4 +144,37 @@
 
 .nodisplay{
     display: none;
+}
+
+.circle_Red {
+    width: 15rpx;
+    height: 15rpx;
+    border-radius: 7.5rpx;
+    display: inline-block;
+    padding: 1rpx 0;
+    box-sizing: border-box;
+    position: relative;
+    background-color: red;
+}
+
+.circle_Blue {
+    width: 15rpx;
+    height: 15rpx;
+    border-radius: 7.5rpx;
+    display: inline-block;
+    padding: 1rpx 0;
+    box-sizing: border-box;
+    position: relative;
+    background-color: blue;
+}
+
+.circle_Gray {
+    width: 15rpx;
+    height: 15rpx;
+    border-radius: 7.5rpx;
+    display: inline-block;
+    padding: 1rpx 0;
+    box-sizing: border-box;
+    position: relative;
+    background-color: gray;
 }

@@ -26,10 +26,10 @@
 }
 
 .hr_divider{
-    width: 85%;
+    width: 25%;
     height: 2rpx;
     background-color: green;
-    /* margin: 20rpx; */
+    /* margin: 10rpx; */
     /* border-bottom: 2rpx green solid; */
 }
 
@@ -49,30 +49,30 @@
     /* position: absolute; */
 }
 
-.bottom_text1 {
+.bottom_mottosTop {
     z-index: 100;
     position: absolute;
-    top: 10%;    
+    /* top: 5%;     */
     left: 5%;
     font-size: medium;
 }
 
-.bottom_text2 {
+.bottom_mottosMiddle {
     z-index: 100;
     position: absolute;
-    top: 40%;    
+    top: 30%;    
     left: 5%;
     font-size: medium; 
 }
-.bottom_text3 {
+.bottom_mottosBottom {
     z-index: 100;
     position: absolute; 
-    top: 70%  ; 
+    top: 60%  ; 
     left: 5%;
     font-size: medium; 
 }
 
-.bottom_text21 {
+.bottom_companyName {
     z-index: 100;
     position: absolute;
     top: 20%;    
