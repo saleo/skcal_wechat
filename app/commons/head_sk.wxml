@@ -1,0 +1,5 @@
+<template name="head_sk">
+    <view class='banner'>
+      <image src="../../resources/sk_banner.png" mode="widthFix" class="banner_image"/>
+    </view>
+</template>

@@ -1,2 +1,68 @@
 /**app.wxss**/
+/* pages/index/index.wxss */
+.banner{
+  height: 100%;
+  position: relative;
+}
+
+.banner_image {
+  width: 100%;
+  z-index: 1;
+  /* position: absolute; */
+}
+
+.banner_text {
+  z-index: 100;
+  position: absolute;    
+  line-height: 200rpx;
+  color: green;
+  left: 5%;
+  top: 5%;
+  font-size: x-large ;
+}
+
+.op_navigate_bar{
+  display: flex;
+  justify-content: space-between ;
+  align-items: center;
+}
+
+.hr_divider{
+  width: 15%;
+  height: 2rpx;
+  background-color: green;
+  /* border-bottom: 2rpx green solid; */
+}
+
+.op_image{
+  height: 20px;
+  width: 20px;
+  margin: 15px,15px;
+}
+.bottom{
+  height: fit-content;
+  position: relative;
+}
+
+.bottom_image {
+  width: 100%;
+  z-index: 1;
+  /* position: absolute; */
+}
+
+.bottom_companyName {
+  z-index: 100;
+  position: absolute;
+  top: 20%;    
+  left: 25%;
+  font-size: medium;
+}
+.bottom_text31 {
+  z-index: 100;
+  position: absolute; 
+  top: 50%  ; 
+  left: 30%;
+  font-size: small; 
+  text-align: center;
+}
 

@@ -1,13 +1,16 @@
-<!--pages/info/about.wxml-->
+<!--pages/info/info.wxml-->
 <import src="../../commons/head_sk.wxml" />
 <import src="../../commons/foot_sk.wxml" />
 <import src="../../commons/op_navigate_bar.wxml" />
+<import src="../../commons/intro_content.wxml" />
+<import src="../../commons/donators_content.wxml" />
+<import src="../../commons/health_content.wxml" />
 
 <view class="container">
 
     <template is="head_sk"/>
 
-
+    <template is="{{contentType}}_content"/>
 
     <template is="op_navigate_bar" />
 

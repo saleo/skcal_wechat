@@ -1,0 +1,5 @@
+<template name="intro_content">
+    <view class='cls_info_content'>
+      intro here
+    </view>        
+</template>
