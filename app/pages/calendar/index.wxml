@@ -28,7 +28,6 @@
 
             <view 
                 class='grid'
-                style='top:{{topValues[index]}}rpx'
                 >
 
                 <view 

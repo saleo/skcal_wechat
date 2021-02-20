@@ -16,8 +16,8 @@
     line-height: 200rpx;
     color: green;
     left: 5%;
-    top: 20%;
-    font-size: larger;
+    top: 5%;
+    font-size: x-large ;
 }
 
 .op_navigate_bar{

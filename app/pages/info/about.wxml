@@ -1,0 +1,16 @@
+<!--pages/info/about.wxml-->
+<import src="../../commons/head_sk.wxml" />
+<import src="../../commons/foot_sk.wxml" />
+<import src="../../commons/op_navigate_bar.wxml" />
+
+<view class="container">
+
+    <template is="head_sk"/>
+
+
+
+    <template is="op_navigate_bar" />
+
+    <template is="foot_sk" data="{{mottos_digest:mottos_digest,year:year,month:month}}" />
+
+</view>
