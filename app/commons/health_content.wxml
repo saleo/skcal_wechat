@@ -1,5 +1,0 @@
-<template name="health_content">
-    <view class='cls_info_content'>
-      health here
-    </view>        
-</template>

@@ -1,0 +1,18 @@
+    <!--pages/info/info.wxml-->
+<import src="../../commons/head_sk.wxml" />
+<import src="../../commons/foot_sk.wxml" />
+<import src="../../commons/op_navigate_bar.wxml" />
+
+<view class="container">
+
+    <template is="head_sk"/>
+
+    <view class='cls_info_content'>
+      health here
+    </view>        
+
+    <template is="op_navigate_bar" />
+
+    <template is="foot_sk" />
+
+</view>

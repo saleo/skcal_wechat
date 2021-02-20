@@ -65,4 +65,13 @@
   font-size: small; 
   text-align: center;
 }
-
+.cls_info_content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-between;
+  box-sizing: border-box;
+  position: relative;
+  padding: 17rpx 0;
+  height: 600rpx;
+}

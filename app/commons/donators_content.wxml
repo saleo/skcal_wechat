@@ -1,5 +1,0 @@
-<template name="donators_content">
-    <view class='cls_info_content'>
-      donators here
-    </view>        
-</template>
