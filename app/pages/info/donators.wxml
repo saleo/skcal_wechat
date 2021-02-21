@@ -8,7 +8,7 @@
     <template is="head_sk"/>
 
     <view class='cls_info_content'>
-      donate here 
+      <image src="../../resources/liuheyuan.png" />
     </view>        
 
     <template is="op_navigate_bar" />

@@ -1,6 +1,7 @@
 <template name="foot_sk">
   <view class='bottom'>
-            <text class="bottom_companyName"> 商丘市寿康文化研究学会 {{year}}</text>                        
-            <image src='../../resources/bottom_bg_transparent21.png' class="bottom_image" mode="widthFix"/>            
-    </view>
+    <text class="bottom_companyName"> 商丘市寿康文化研究学会 </text>                        
+    <text class="bottom_url">http://www.shoukang.org</text>
+    <image src='../../resources/bottom_bg_transparent21.png' class="bottom_image" mode="widthFix"/>            
+  </view>
 </template>
