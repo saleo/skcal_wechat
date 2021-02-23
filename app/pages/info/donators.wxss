@@ -1,1 +1,12 @@
 /* pages/info/donators.wxss */
+.row_2cols{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.img_donators{
+  width: 352rpx;
+  height: 90rpx;
+}

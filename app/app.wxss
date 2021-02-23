@@ -75,12 +75,11 @@
 .cls_info_content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: space-between;
+  justify-content: space-evenly;
+  
   box-sizing: border-box;
-  position: relative;
-  padding: 7rpx 0;
-  height: 670rpx;
+  padding: 17rpx;
+  height: 560rpx;
 }
 .weui-tabs-bar__wrp {
   border-bottom: 1px solid #eee;
@@ -107,4 +106,7 @@
 .tab-bar-title__selected {
   font-size: 20px;
   font-weight: bold;
+}
+.view_block {
+  display: block;
 }

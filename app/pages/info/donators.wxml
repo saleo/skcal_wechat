@@ -7,9 +7,14 @@
 
     <template is="head_sk"/>
 
-    <view class='cls_info_content'>
-      <image src="../../resources/liuheyuan.png" />
-    </view>        
+<view class="cls_info_content">
+  <view class="view_block"><image src='../../resources/liuheyuan.png' class="img_donators" mode="aspectFit"/></view>
+  <view class="view_block"><text>深圳六和园方伟坤老师</text></view>
+  <view class="view-block"><image src='../../resources/sk_banner.png' class="img_donators" mode="aspectFit"/></view>
+  <view class="view-block"><text>寿康学会会员和网友</text></view>
+  <view class="view-block"><text>所有功德回向给戒邪淫网和寿康学会的所有资助者、随喜者、参与者、见闻者、传播者，业障消除，福慧增长，尽此一报身，同生极乐国。</text></view>
+
+</view>
 
     <template is="op_navigate_bar" />
 
