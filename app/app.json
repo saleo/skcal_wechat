@@ -11,8 +11,5 @@
     "navigationBarTitleText": "寿康日历",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap99.json",
-  "useExtendedLib": {
-    "weui": true
-  }
+  "sitemapLocation": "sitemap99.json"
 }
