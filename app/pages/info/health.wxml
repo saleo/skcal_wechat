@@ -7,9 +7,18 @@
 
     <template is="head_sk"/>
 
-    <view class='cls_info_content'>
-      health here
-    </view>        
+    <mp-tabs 
+      tabs="{{tabs}}" 
+      activeTab="{{activeTab}}" 
+      swiperClass="weui-tabs-swiper"
+      bindtabclick="onTabCLick"
+      bindchange="onChange"
+      activeClass="tab-bar-title__selected"
+    >
+      <block wx:for="{{tabs}}" wx:key="title">
+        <scroll-view scroll-y="true" class="tab-content" slot="tab-content-{{index}}" > {{item.content}} </scroll-view>
+      </block>
+    </mp-tabs>      
 
     <template is="op_navigate_bar" />
 

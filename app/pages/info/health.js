@@ -5,62 +5,41 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tabs: [],
+    activeTab:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const tabs=[
+      {
+        title:'脏腑心理病因\n基本取象规律',
+        content:'\
+        '
+      },
+      {
+        title:'身体部位\n取象规律',
+        content:'\
+        '
+      },
+      {
+        title:'部分感觉\n心情对应',
+        content:'\
+        '
+      }
+    ]
+    this.setData({tabs})
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onTabCLick(e) {
+    const index = e.detail.index
+    this.setData({activeTab: index})
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onChange(e) {
+    const index = e.detail.index
+    this.setData({activeTab: index})
   }
 })
