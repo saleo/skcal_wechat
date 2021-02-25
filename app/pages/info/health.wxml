@@ -19,7 +19,7 @@
         <scroll-view scroll-y="true" class="tab-content" slot="tab-content-{{index}}" > 
           <view class="sk_grids">
             <view class="sk_grid_left"><text class="tableCaption">{{tableCaptions[index].tc1}}</text></view>
-            <view class="sk_grid_right"><text class="tableCaption">{{tableCaptions[index].tc2}}</text></view>
+            <view class="sk_grid_rightCaption"><text class="tableCaption">{{tableCaptions[index].tc2}}</text></view>
             <block wx:if="{{index==0}}">
               <block wx:for="{{item.content}}" wx:key="viscera" wx:for-item="tabListItem" wx:for-index="tabListIdx">
                 <view class="sk_grid_left"><text class="tableCell">{{tabListItem['viscera']}}</text></view>

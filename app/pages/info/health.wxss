@@ -11,10 +11,16 @@
   text-align: center;
 
 }
+.sk_grid_rightCaption{
+  flex:0 0 80%;
+  box-sizing: border-box;
+  border: 1px solid lightgreen ; 
+  text-align: center;
+}
 .sk_grid_right{
   flex:0 0 80%;
   box-sizing: border-box;
-  border: 1px solid lightgreen  
+  border: 1px solid lightgreen ; 
 }
 .sk_grid_rightTop{
   width: 100%;
