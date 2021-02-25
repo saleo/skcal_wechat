@@ -16,7 +16,25 @@
       activeClass="tab-bar-title__selected"
     >
       <block wx:for="{{tabs}}" wx:key="title">
-        <scroll-view scroll-y="true" class="tab-content" slot="tab-content-{{index}}" > {{item.content}} </scroll-view>
+        <scroll-view scroll-y="true" class="tab-content" slot="tab-content-{{index}}" > 
+          <view class="sk_grids"  >
+            <view class="sk_grid_left"><text class="tableCaption">{{tableCaptions[index].tc1}}</text></view>
+            <view class="sk_grid_right"><text class="tableCaption">{{tableCaptions[index].tc2}}</text></view>
+            <block wx:if="{{index==0}}">
+              <block wx:for="{{item.content}}" wx:for-item="tabListItem" wx:for-index="tabListIdx">
+                <view class="sk_grid_left"><text class="tableCell">{{tabListItem['viscera']}}</text></view>
+                <view class="sk_grid_right">
+                  <view class="sk_grid_rightTop"><text class="tableCell">{{tabListItem['desc1']}}</text></view>
+                  <view class="sk_grid_rightDown"><text class="tableCell">{{tabListItem['desc2']}}</text></view>
+                </view>
+              </block> 
+            </block>
+            <!-- the latter 2 tabs -->
+            <block wx:else>
+         
+            </block>
+          </view>
+        </scroll-view>
       </block>
     </mp-tabs>      
 

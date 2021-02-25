@@ -1,1 +1,36 @@
 /* pages/info/health.wxss */
+.sk_grids{
+  width: 100%;
+  display: flex;
+  flex-wrap:wrap;
+}
+.sk_grid_left{
+  flex: 0 0 20%;
+  box-sizing: border-box;
+  border: 1px solid lightgreen;
+  text-align: center;
+
+}
+.sk_grid_right{
+  flex:0 0 80%;
+  box-sizing: border-box;
+  border: 1px solid lightgreen  
+}
+.sk_grid_rightTop{
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  border-bottom: 1px solid lightgreen  
+}
+.sk_grid_rightDown{
+  width: 100%;
+  height: auto;
+  box-sizing: border-box; 
+}
+.tableCaption{
+  font-weight: bold;
+  font-size: small;
+}
+.tableCell{
+  font-size: small;
+}

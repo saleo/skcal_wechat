@@ -12,7 +12,8 @@
     "navigationBarTextStyle": "black"
   },
   "usingComponents": {
-    "mp-tabs": "@miniprogram-component-plus/tabs"  
+    "mp-tabs": "@miniprogram-component-plus/tabs",
+    "mp-grids": "weui-miniprogram/grids/grids"
   },
   "sitemapLocation": "sitemap99.json"
 }
