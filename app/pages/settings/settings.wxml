@@ -1,0 +1,56 @@
+    <!--pages/settings/settings.wxml-->
+<import src="../../commons/head_sk.wxml" />
+<import src="../../commons/foot_sk.wxml" />
+<import src="../../commons/op_navigate_bar.wxml" />
+
+<view class="container">
+
+  <template is="head_sk"/>
+  <view class="weui_cells ">
+    <view class="weui-cell">
+      <view class="weui-cell__hd">关系</view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindWhomChange" value="{{index}}" range="{{whomfor_array}}">
+            <view class="weui-input">whomfor_array</view>
+        </picker>
+      </view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__hd">纪念诞忌</view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindWhatChange" value="{{index}}" range="{{whatfor_array}}">
+            <view class="weui_input">whatfor</view>
+        </picker>
+      </view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__hd">日期</view>
+      <view class="weui-cell__bd">
+        <datepicker-plus bind:submit='submit' showDatePickerPlus='{{show}}'></datepicker-plus>
+      </view>
+    </view>
+    <view class="weui-cell">
+      <button class="weui-btn_cell" type="primary" size="mini">添加</button>
+    </view>
+    <view class="weui-cell">
+      <text>double to delete selected</text>
+    </view>
+    <view class="weui-cell">
+    <!-- list of anniversaries 
+      no caption row added since its clear and less columns-->
+      <scroll-view scroll-y="true" class="sv">
+        <view class="weui-grids">
+          <block wx:for="{{lists}}">
+            <view class="weui-grid">whomefor</view>
+            <view class="weui-grid">whomefor</view>
+            <view class="weui-grid">whomefor</view>
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <template is="op_navigate_bar" />
+
+  <template is="foot_sk" />
+
+</view>

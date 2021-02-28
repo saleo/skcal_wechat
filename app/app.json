@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/info/intro",
     "pages/info/donators",
-    "pages/info/health"
+    "pages/info/health",
+    "pages/settings/settings"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,8 +13,7 @@
     "navigationBarTextStyle": "black"
   },
   "usingComponents": {
-    "mp-tabs": "@miniprogram-component-plus/tabs",
-    "mp-grids": "weui-miniprogram/grids/grids"
+    "mp-tabs": "@miniprogram-component-plus/tabs"
   },
   "sitemapLocation": "sitemap99.json"
 }

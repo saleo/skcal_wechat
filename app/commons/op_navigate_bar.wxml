@@ -13,7 +13,7 @@
         <navigator url="/pages/index/index" open-type="redirect">
             <image src="../../resources/today.png" class="op_image" />
         </navigator>               
-        <navigator url="navigate?title=123">
+        <navigator url="/pages/settings/settings" open-type="redirect">
             <image src="../../resources/settings.png" class="op_image" />
         </navigator>
         <view class="hr_divider"></view>

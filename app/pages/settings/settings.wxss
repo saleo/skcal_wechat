@@ -1,0 +1,11 @@
+/*  pages/settings/settings.wxss*/
+.weui-cell__hd {
+  width: 30%;
+}
+
+.weui-cell__bd {
+  width:70%
+}
+.sv{
+  height: 200rpx;
+}
