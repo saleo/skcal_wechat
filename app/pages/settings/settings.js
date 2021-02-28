@@ -7,64 +7,46 @@ Page({
   data: {
     whomfor_array: ['祖先','父母','师长','配偶','自己'],
     whatfor_array: ['生日','忌日','纪念日'],
-    
-      
-    
+    whom_index:0,
+    what_index:0,
+    showDPP: false,  
+    dateDPP: Date(),
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  bindWhomChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      whom_index: e.detail.value
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  bindWhatChange: function(e){
+    console.log('whatchange=',e.detail);
+    this.setData({
+      what_index:e.detail.value
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  tapShowDPP: function()  {
+    this.setData({
+      showDPP:true
+    })
+  },
+  submitDPP: function(){
+    this.setData({
+      dateDPP:"datenow"
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onLoad: function(options) {
+    let date=new Date(),y=date.getFullYear();
+    var d=date.getDate();
+    var m=date.getMonth()+1;
+    m=m<10?'0'+m:m;
+    d=d<10?'0'+d:d;
+    this.setData({
+        dateDPP: y+'-'+m+'-'+d
+      }
+    )
   }
 })

@@ -1,11 +1,15 @@
 /*  pages/settings/settings.wxss*/
 .weui-cell__hd {
   width: 30%;
+  font-weight: bold;
 }
 
 .weui-cell__bd {
-  width:70%
+  width:70%;
 }
 .sv{
   height: 200rpx;
+}
+.cls_showDPP{
+  z-index:999;
 }
