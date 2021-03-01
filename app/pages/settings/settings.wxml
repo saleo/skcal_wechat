@@ -6,51 +6,26 @@
 <view class="container">
 
   <template is="head_sk"/>
-  <view class="weui_cells ">
-    <view class="weui-cell">
-      <view class="weui-cell__hd">关系</view>
-      <view class="weui-cell__bd">
-        <picker bindchange="bindWhomChange" value="{{whom_index}}" range="{{whomfor_array}}">
-            <view class="weui-input">{{whomfor_array[whom_index]}}</view>
-        </picker>
-      </view>
+  <scroll-view scroll-y="true" class="sv">
+    <view class="weui-grids">
+      <view class="weui-grid grid-caption-line"><text>关系</text></view>
+      <view class="weui-grid grid-caption-line"><text>生忌纪念</text></view>
+      <view class="weui-grid grid-caption-line"><text>日期</text></view>
+      <view class="weui-grid right-grid grid-caption-line"><text style="white-space:pre-wrap" space="nbsp">  </text></view>
+
+      <block wx:for="{{list}}">
+        <view class="weui-grid">{{whomfor_array[item['whom']]}}</view>
+        <view class="weui-grid">{{whatfor_array[item['what']]}}</view>
+        <view class="weui-grid">纪念日</view>
+        <view class="weui-grid right-grid"><checkbox></checkbox></view>
+      </block>
     </view>
-    <view class="weui-cell">
-      <view class="weui-cell__hd">纪念诞忌</view>
-      <view class="weui-cell__bd">
-        <picker bindchange="bindWhatChange" value="{{what_index}}" range="{{whatfor_array}}">
-            <view class="weui_input">{{whatfor_array[what_index]}}</view>
-        </picker>
-      </view>
-    </view>
-    <view class="weui-cell">
-      <view class="weui-cell__hd">日期(公/农历)</view>
-      <view class="weui-cell__bd">
-        <view bindtap="tapShowDPP" class="cls_showDPP">{{dateDPP}}</view>       
-        <datepicker-plus bind:submit='submit' showDatePickerPlus="{{showDPP}}" init-date="2020-01-01">
-        </datepicker-plus>
-      </view>
-    </view>
-    <view class="weui-cell">
-      <button class="weui-btn_cell" type="primary" size="mini">添加</button>
-    </view>
-    <view class="weui-cell">
-      <text>double to delete selected</text>
-    </view>
-    <view class="weui-cell">
-    <!-- list of anniversaries 
-      no caption row added since its clear and less columns-->
-      <scroll-view scroll-y="true" class="sv">
-        <view class="weui-grids">
-          <block wx:for="{{lists}}">
-            <view class="weui-grid">whomefor</view>
-            <view class="weui-grid">whomefor</view>
-            <view class="weui-grid">whomefor</view>
-          </block>
-        </view>
+  </scroll-view> 
       </scroll-view>
-    </view>
-  </view>
+  </scroll-view> 
+   <!--mask comes here  -->
+  <include src="./edit_section.wxml"></include>
+  
   <template is="op_navigate_bar" />
 
   <template is="foot_sk" />

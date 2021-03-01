@@ -1,0 +1,31 @@
+<view class="weui-picker__mask">
+    <view class="weui_cells ">
+      <view class="weui-cell">
+        <view class="weui-cell__hd">关系</view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindWhomChange" value="{{whom_index}}" range="{{whomfor_array}}">
+              <view class="weui-input">{{whomfor_array[whom_index]}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">纪念诞忌</view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindWhatChange" value="{{what_index}}" range="{{whatfor_array}}">
+              <view class="weui_input">{{whatfor_array[what_index]}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">日期(公/农历)</view>
+        <view class="weui-cell__bd">
+          <view bindtap="tapShowDPP"> {{dateDPP}}</view>       
+          <datepicker-plus bind:submit='submit' showDatePickerPlus="{{showDPP}}" init-date="2020-01-01">
+          </datepicker-plus>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <button class="weui-btn_cell" type="primary" size="mini">保存</button>
+      </view>
+    </view>
+  </view>

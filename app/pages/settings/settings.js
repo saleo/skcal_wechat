@@ -11,6 +11,14 @@ Page({
     what_index:0,
     showDPP: false,  
     dateDPP: Date(),
+    list: [
+      {//whom=index of whomfor_array,so on..
+        whom:0,
+        what:2,
+        anniversary:'0203',//mmdd
+        lunarOrSolar:'l' //l=lunar,s=solar
+      },     
+    ]
   },
 
   bindWhomChange(e) {
