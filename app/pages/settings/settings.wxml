@@ -4,30 +4,38 @@
 <import src="../../commons/op_navigate_bar.wxml" />
 
 <view class="container">
+  <view class="inner_container">
+    <template is="head_sk"/>
+    <scroll-view scroll-y="true" class="sv">
+      <view class="weui-grids">
+        <view class="weui-grid grid-caption-line"><text>关系</text></view>
+        <view class="weui-grid grid-caption-line"><text>生忌纪念</text></view>
+        <view class="weui-grid grid-caption-line"><text>日期</text></view>
+        <view class="weui-grid right-grid grid-caption-line"><text style="white-space:pre-wrap" space="nbsp">  </text></view>
 
-  <template is="head_sk"/>
-  <scroll-view scroll-y="true" class="sv">
-    <view class="weui-grids">
-      <view class="weui-grid grid-caption-line"><text>关系</text></view>
-      <view class="weui-grid grid-caption-line"><text>生忌纪念</text></view>
-      <view class="weui-grid grid-caption-line"><text>日期</text></view>
-      <view class="weui-grid right-grid grid-caption-line"><text style="white-space:pre-wrap" space="nbsp">  </text></view>
-
-      <block wx:for="{{list}}">
-        <view class="weui-grid">{{whomfor_array[item['whom']]}}</view>
-        <view class="weui-grid">{{whatfor_array[item['what']]}}</view>
+        <block wx:for="{{list}}">
+          <view class="weui-grid">{{whomfor_array[item['whom']]}}</view>
+          <view class="weui-grid">{{whatfor_array[item['what']]}}</view>
+          <view class="weui-grid">纪念日</view>
+          <view class="weui-grid right-grid"><checkbox></checkbox></view>
+        </block>
         <view class="weui-grid">纪念日</view>
-        <view class="weui-grid right-grid"><checkbox></checkbox></view>
-      </block>
+        <view class="weui-grid">纪念日</view>
+        <view class="weui-grid">纪念日</view>
+        <view class="weui-grid right-grid"><checkbox></checkbox></view>        
+        <view class="weui-grid">纪念日</view>
+        <view class="weui-grid">纪念日</view>
+        <view class="weui-grid">纪念日</view>
+        <view class="weui-grid right-grid"><checkbox></checkbox></view>   
+      </view>
+    </scroll-view> 
+    <view class="weui-btn-area_inline">
+      <button class="weui-btn" type="primary" bindtap="fn_showEditSection">添加</button>
+      <button class="weui-btn" type="primary">删除选中</button>
     </view>
-  </scroll-view> 
-      </scroll-view>
-  </scroll-view> 
-   <!--mask comes here  -->
+    <template is="op_navigate_bar" />
+    <template is="foot_sk" />
+  </view> 
+  <!--mask comes here  -->
   <include src="./edit_section.wxml"></include>
-  
-  <template is="op_navigate_bar" />
-
-  <template is="foot_sk" />
-
 </view>

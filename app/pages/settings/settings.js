@@ -18,7 +18,8 @@ Page({
         anniversary:'0203',//mmdd
         lunarOrSolar:'l' //l=lunar,s=solar
       },     
-    ]
+    ],
+    showEditSection: false
   },
 
   bindWhomChange(e) {
@@ -35,6 +36,17 @@ Page({
     })
   },
 
+  fn_showEditSection: function() {
+    this.setData({
+      showEditSection:true
+    })
+  },
+
+  fn_save: function() {
+    this.setData({
+      showEditSection:false
+    })
+  },
   tapShowDPP: function()  {
     this.setData({
       showDPP:true
