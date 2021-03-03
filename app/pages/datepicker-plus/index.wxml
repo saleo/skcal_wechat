@@ -1,18 +1,10 @@
 <view class='modal-mask' wx:if="{{ showDatePickerPlus }}" bindtap='closeDatePickerPlus'></view>
 <view class='datepicker' wx:if="{{ showDatePickerPlus }}" animation="{{animationData}}">
-  <view class='datepicker-header'>
-    <view bindtap='submitSelectDate'>确定</view>
-    <view bindtap='closeDatePickerPlus'>取消</view>
+  <view class="datepicker-header">
+    <button class='weui-btn_cell left' type='primary' size="mini" bindtap='closeDatePickerPlus'>取消</button>
+    <button class='weui-btn_cell right' type='primary' size="mini" bindtap='submitSelectDate'>确定</button>
   </view>
   <view class='datepicker-content'>
-    <picker-view value="{{glDateNoYearMutiIndex}}" bindchange="bindDateGlNoYear" wx:if="{{ datePickerAttr.dateType == 1 && datePickerAttr.showYear == 0 }}">
-      <picker-view-column>
-        <view wx:for="{{glMonthsNoYear}}" wx:key>{{item}}月</view>
-      </picker-view-column>
-      <picker-view-column>
-        <view wx:for="{{glDaysNoYear}}" wx:key>{{item}}日</view>
-      </picker-view-column>
-    </picker-view>
     <picker-view value="{{nlDateNoYearMutiIndex}}" bindchange="bindDateNlNoYear" wx:if="{{ datePickerAttr.dateType == 2 && datePickerAttr.showYear == 0 }}">
       <picker-view-column>
         <view wx:for="{{nlMonthsNoYear}}" wx:key>{{item}}</view>

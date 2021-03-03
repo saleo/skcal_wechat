@@ -17,7 +17,7 @@
       </view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__hd">日期(公/农历)</view>
+      <view class="weui-cell__hd">日期(农历)</view>
       <view class="weui-cell__bd">
         <view bindtap="tapShowDPP"> {{dateDPP}}</view>       
         <datepicker-plus bind:submit='submit' showDatePickerPlus="{{showDPP}}" >
@@ -25,8 +25,8 @@
       </view>
     </view>
     <view class="weui-cell">
-      <button class="weui-btn_cell" type="primary" bindtap="fn_save" size="mini">保存</button>
       <button class="weui-btn_cell" type="primary" bindtap="fn_closeEditSection" size="mini">取消</button>
+      <button class="weui-btn_cell" type="primary" bindtap="fn_save" size="mini">保存</button>
     </view>
  </view>
 </view>
