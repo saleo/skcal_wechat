@@ -1509,8 +1509,8 @@ Component({
     // 私有数据，可用于模版渲染
     data: {
         datePickerAttr: {
-            showYear: 1,
-            dateType: 1,
+            showYear: 0,
+            dateType: 2,
         },
         nlDateMutiIndex: [90, 0, 0],
         nlDateNoYearMutiIndex: [0, 0],
