@@ -50,22 +50,29 @@ Page({
       showEditSection:true
     })
   },
-
   fn_closeEditSection: function() {
-    console.log('closeEditSection')
+    this.fn_closeDPP()
     this.setData({
       showEditSection:false
     })
   },
-
   fn_save: function() {
-    this.fn_closeEditSection()
+    this.fn_closeDPP()
+    this.setData({
+      showEditSection:false
+    })
   },
-  tapShowDPP: function()  {
+  fn_showDPP: function()  {
     this.setData({
       showDPP:true
     })
   },
+  fn_closeDPP: function(){
+    this.setData({
+      showDPP:false
+    })
+  },
+
   submitDPP: function(){
     this.setData({
       dateDPP:"datenow"

@@ -1695,6 +1695,7 @@ Component({
                     showDatePickerPlus: false,
                 })
             }.bind(this), 120)
+            this.triggerEvent('fn_closeDPP');  
         },
         onMyButtonTap: function () {
             this.setData({

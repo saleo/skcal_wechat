@@ -1,4 +1,4 @@
-<view class='modal-mask' wx:if="{{ showDatePickerPlus }}" bindtap='closeDatePickerPlus'></view>
+<view class='modal-mask' wx:if="{{ showDatePickerPlus }}"></view>
 <view class='datepicker' wx:if="{{ showDatePickerPlus }}" animation="{{animationData}}">
   <view class="datepicker-header">
     <button class='weui-btn_cell left' type='primary' size="mini" bindtap='closeDatePickerPlus'>取消</button>
