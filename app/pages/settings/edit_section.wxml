@@ -24,6 +24,9 @@
         </datepicker-plus>
       </view>
     </view>
-    <button class="weui-btn_cell" type="primary" bindtap="fn_save">保存</button>
+    <view class="weui-cell">
+      <button class="weui-btn_cell" type="primary" bindtap="fn_save" size="mini">保存</button>
+      <button class="weui-btn_cell" type="primary" bindtap="fn_closeEditSection" size="mini">取消</button>
+    </view>
  </view>
 </view>

@@ -27,7 +27,7 @@
   font-weight: bold;
 }
 .weui-mask{
-  top: 60% !important;
+  top: auto;
   background-color:white;
   border: 2px solid var(--weui-FG-3);
   border-radius: 16px;

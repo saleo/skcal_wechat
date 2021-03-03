@@ -25,7 +25,7 @@
   background-color: #e9e9e9;
   color: #2f80f2;
   align-items: center;
-  justify-content: right;
+  justify-content: space-evenly;
   font-size: 28rpx;
 }
 .datepicker-header .left {

@@ -51,10 +51,15 @@ Page({
     })
   },
 
-  fn_save: function() {
+  fn_closeEditSection: function() {
+    console.log('closeEditSection')
     this.setData({
       showEditSection:false
     })
+  },
+
+  fn_save: function() {
+    this.fn_closeEditSection()
   },
   tapShowDPP: function()  {
     this.setData({
