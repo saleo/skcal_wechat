@@ -1646,21 +1646,10 @@ Component({
          * 选择日期->确定
          */
         submitSelectDate: function () {
-            let date = '';
-            if (this.data.datePickerAttr.dateType == 1) {
-                date = this.data.datePickerAttr.showYear == 1 ? (this.data.glYears[this.data.glDateMutiIndex[0]] + '-' + this.data.glMonths[this.data.glDateMutiIndex[1]] + '-' + this.data.glDays[this.data.glDateMutiIndex[2]]) : (this.data.glMonths[this.data.glDateNoYearMutiIndex[0]] + '-' + this.data.glDaysNoYear[this.data.glDateNoYearMutiIndex[1]])
-            }
-            else {
-                date = this.data.datePickerAttr.showYear == 1 ? (this.data.nlYears[this.data.nlDateMutiIndex[0]] + this.data.nlMonths[this.data.nlDateMutiIndex[1]] + this.data.nlDays[this.data.nlDateMutiIndex[2]]) : (this.data.nlMonthsNoYear[this.data.nlDateNoYearMutiIndex[0]] + this.data.nlDaysNoYear[this.data.nlDateNoYearMutiIndex[1]])
-            }
-            this.closeDatePickerPlus();
-            var myEventDetail = {
-                dateStr: date,
-                showYear: this.data.datePickerAttr.showYear == 1 ? true : false,
-                dateType: this.data.datePickerAttr.dateType == 1 ? '公历' : '农历'
-            } // detail对象，提供给事件监听函数
-            var myEventOption = {} // 触发事件的选项
-            this.triggerEvent('submit', myEventDetail, myEventOption)
+            this.setData({
+                showDatePickerPlus:false
+            })
+            this.triggerEvent('submit', {chinaMD_index:this.data.nlDateNoYearMutiIndex})
         },
         // 显示日期选择控件
         showDatePickerPlus: function () {

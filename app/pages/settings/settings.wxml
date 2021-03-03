@@ -16,17 +16,9 @@
         <block wx:for="{{list}}">
           <view class="weui-grid">{{whomfor_array[item['whom']]}}</view>
           <view class="weui-grid">{{whatfor_array[item['what']]}}</view>
-          <view class="weui-grid date-grid">纪念日</view>
+          <view class="weui-grid date-grid">{{item['lunarM']}}</view>
           <view class="weui-grid right-grid"><checkbox></checkbox></view>
         </block>
-        <view class="weui-grid">纪念日</view>
-        <view class="weui-grid">纪念日</view>
-        <view class="weui-grid date-grid">纪念日</view>
-        <view class="weui-grid right-grid"><checkbox></checkbox></view>        
-        <view class="weui-grid">纪念日</view>
-        <view class="weui-grid">纪念日</view>
-        <view class="weui-grid date-grid">纪念日</view>
-        <view class="weui-grid right-grid"><checkbox></checkbox></view>   
       </view>
     </scroll-view> 
     <view class="weui-btn-area_inline">

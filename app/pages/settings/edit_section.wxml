@@ -20,7 +20,7 @@
       <view class="weui-cell__hd">日期(农历)</view>
       <view class="weui-cell__bd">
         <view bindtap="fn_showDPP"> {{dateDPP}}</view>       
-        <datepicker-plus bind:submit='submit' showDatePickerPlus="{{showDPP}}" >
+        <datepicker-plus bind:submit='submitDPP' showDatePickerPlus="{{showDPP}}" >
         </datepicker-plus>
       </view>
     </view>

@@ -1,12 +1,7 @@
 //  pages/settings/settings.js 
 import calendar from '../calendar/lunar-calendar'
-
-const nlMonth = ["正月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "冬月", "腊月"];
-// 农历天份 29
-const nlDay1 = ["初一", "初二", "初三", "初四", "初五", "初六", "初七", "初八", "初九", "初十", "十一", "十二", "十三", "十四", "十五", "十六", "十七", "十八", "十九", "二十", "廿一", "廿二", "廿三", "廿四", "廿五", "廿六", "廿七", "廿八", "廿九"];
-// 农历天份 30
-const nlDay2 = ["初一", "初二", "初三", "初四", "初五", "初六", "初七", "初八", "初九", "初十", "十一", "十二", "十三", "十四", "十五", "十六", "十七", "十八", "十九", "二十", "廿一", "廿二", "廿三", "廿四", "廿五", "廿六", "廿七", "廿八", "廿九", "三十"];
-
+const chinaM_array= ["正月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "冬月", "腊月"];
+const chinaD_array = ["初一", "初二", "初三", "初四", "初五", "初六", "初七", "初八", "初九", "初十", "十一", "十二", "十三", "十四", "十五", "十六", "十七", "十八", "十九", "二十", "廿一", "廿二", "廿三", "廿四", "廿五", "廿六", "廿七", "廿八", "廿九", "三十"];
 
 Page({
 
@@ -20,12 +15,17 @@ Page({
     what_index:0,
     showDPP: false,  
     dateDPP: "",//MMDD in lunar
-    list: [
+    chinaM_array:chinaM_array,
+    chinaD_array:chinaD_array,
+    chinaM_index:0,
+    chinaD_index:0,
+    //avs=anniversary
+    avs_list: [
       {//whom=index of whomfor_array,so on..
         whom:0,
         what:2,
-        anniversary:'0203',//mmdd
-        lunarOrSolar:'l' //l=lunar,s=solar
+        lunarM:0,
+        lunarD:0
       },     
     ],
     showEditSection: false
@@ -73,9 +73,13 @@ Page({
     })
   },
 
-  submitDPP: function(){
+  submitDPP: function(evt){
+    let mIndex=evt.detail.chinaMD_index[0],dIndex=evt.detail.chinaMD_index[1];
     this.setData({
-      dateDPP:"datenow"
+      chinaM_index:mIndex,
+      chinaD_index:dIndex,
+      dateDPP:chinaM_array[mIndex]+chinaD_array[dIndex],
+      showDPP:false
     })
   },
 
@@ -88,7 +92,7 @@ Page({
     let s2l=calendar.solar2lunar(y,m,d),mCn=s2l.IMonthCn,dCn=s2l.IDayCn;
 
     this.setData({
-        dateDPP: mCn+dCn
+        dateDPP: mCn+dCn,
       }
     )
   }
