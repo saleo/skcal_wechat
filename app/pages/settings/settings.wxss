@@ -14,7 +14,11 @@
   z-index:999;
 }
 .weui-grid{
-  width: 30% !important;
+  width: 25% !important;
+}
+
+.date-grid{
+  width: 40% !important;
 }
 .right-grid{
   width: 10% !important;
