@@ -33,5 +33,9 @@
   <include src="./edit_section.wxml"></include>
 </view>
 <mp-dialog title="发现重复" show="{{showDialog}}" mask="true" mask-closable="true" bindbuttontap="fn_tapDialogOK" buttons="{{dialog_buttons}}">
-  <view>与已有生忌纪念日重复，请检查修改</view>
+  <view class="sk_wrap">
+    <block wx:if="{{currentOp=='a'}}">当前操作:添加\n</block>
+    <block wx:elif="{{currentOp}}=='u'">当前操作:修改\n</block>
+    与已有生忌纪念日重复，请检查修改
+  </view>
 </mp-dialog>

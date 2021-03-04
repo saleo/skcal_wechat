@@ -42,3 +42,6 @@
   position: relative;
   z-index: 5 !important;
 }
+.sk_wrap{
+  white-space:pre-wrap;
+}

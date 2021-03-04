@@ -120,7 +120,7 @@ Page({
     for (const avs of avsListInFun) {
       b1=avs['whom']==this.data.whomfor_index && avs['what']==this.data.whatfor_index;
       b2=avs['lunarM']==this.data.chinaM_index && avs['lunarD']==this.data.chinaD_index;
-      if (b1 && b2) {
+      if ((b1 && b2) || (b1 && opInFun == 'a')) {
         this.setData({
           showDialog:true
         });
