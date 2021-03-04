@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "datepicker-plus":"../datepicker-plus/index"
+    "datepicker-plus":"../datepicker-plus/index",
+    "mp-dialog":"weui-miniprogram/dialog/dialog"
   }
 }

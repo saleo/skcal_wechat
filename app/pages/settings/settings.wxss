@@ -26,7 +26,7 @@
 .grid-caption-line{
   font-weight: bold;
 }
-.weui-mask{
+.container .weui-mask{
   top: auto;
   background-color:white;
   border: 2px solid var(--weui-FG-3);
@@ -37,4 +37,8 @@
 .inner_container{
   position: relative;
   z-index: 0;
+}
+.dialogExtClass{
+  position: relative;
+  z-index: 5 !important;
 }

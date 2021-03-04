@@ -3,16 +3,16 @@
     <view class="weui-cell">
       <view class="weui-cell__hd">关系</view>
       <view class="weui-cell__bd">
-        <picker bindchange="bindWhomChange" value="{{whom_index}}" range="{{whomfor_array}}">
-            <view class="weui-input">{{whomfor_array[whom_index]}}</view>
+        <picker bindchange="bindWhomChange" value="{{whomfor_index}}" range="{{whomfor_array}}">
+            <view class="weui-input">{{whomfor_array[whomfor_index]}}</view>
         </picker>
       </view>
     </view>
     <view class="weui-cell">
       <view class="weui-cell__hd">纪念诞忌</view>
       <view class="weui-cell__bd">
-        <picker bindchange="bindWhatChange" value="{{what_index}}" range="{{whatfor_array}}">
-            <view class="weui_input">{{whatfor_array[what_index]}}</view>
+        <picker bindchange="bindWhatChange" value="{{whatfor_index}}" range="{{whatfor_array}}">
+            <view class="weui_input">{{whatfor_array[whatfor_index]}}</view>
         </picker>
       </view>
     </view>
