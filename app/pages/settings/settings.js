@@ -14,13 +14,13 @@ Page({
     whomfor_index:0,
     whatfor_index:0,
     showDPP: false,  
-    dateDPP: "",//MMDD in lunar
+    shownChinaMD: "",//MMDD in lunar
     chinaM_array:chinaM_array,
     chinaD_array:chinaD_array,
     chinaM_index:0,
     chinaD_index:0,
     //avs=anniversary
-    avs_list: [
+    avsList: [
       // {
       //   uid:0,//unique id, YYMMDDMMSS
       //   whom:0,// //whom=index of whomfor_array,so do latter items
@@ -38,30 +38,30 @@ Page({
   },
 
   tapAllChkbox: function() {
-    if (this.data.avs_list.length==0) return;
+    if (this.data.avsList.length==0) return;
     
-    let avs_listInFun = this.data.avs_list;
+    let avsListInFun = this.data.avsList;
     let currentUIDsInfun=[];
-    let allChked=avs_listInFun.every(avs => avs.chked ==true);
+    let allChked=avsListInFun.every(avs => avs.chked ==true);
     if (!allChked){
-      avs_listInFun.forEach(avs => {
+      avsListInFun.forEach(avs => {
         avs.chked=true
         currentUIDsInfun.push(avs.uid)
       })
     }
     else{
-      avs_listInFun.forEach(avs => avs.chked=false)
+      avsListInFun.forEach(avs => avs.chked=false)
     }
     this.setData({
-      avs_list:avs_listInFun,
+      avsList:avsListInFun,
       currentUIDs:currentUIDsInfun
     })
   },
 
   tapChkbox: function(e) {
-    let avs_listInFun=this.data.avs_list,currentUIDsInfun=this.data.currentUIDs;
+    let avsListInFun=this.data.avsList,currentUIDsInfun=this.data.currentUIDs;
     let uid=e.currentTarget.dataset.uid;
-    let idx=avs_listInFun.findIndex(item => item.uid=uid),chked=avs_listInFun[idx].chked;
+    let idx=avsListInFun.findIndex(item => item.uid=uid),chked=avsListInFun[idx].chked;
     if (chked){
       let currentIdx=currentUIDsInfun.findIndex(uidCurrent => uidCurrent==uid)
       currentUIDsInfun.splice(currentIdx,1)
@@ -69,9 +69,9 @@ Page({
     else{
       currentUIDsInfun.push(uid)
     }
-    avs_listInFun[idx].chked=!chked
+    avsListInFun[idx].chked=!chked
     this.setData({
-      avs_list:avs_listInFun,
+      avsList:avsListInFun,
       currentUIDs:currentUIDsInfun
     })
   },
@@ -84,7 +84,7 @@ Page({
   },
 
   tapRemove: function() {
-
+    
   },
 
   tapUpdate: function() {
@@ -116,7 +116,7 @@ Page({
   },
   fn_save: function() {
     var b1=false,b2=false;
-    let avsListInFun=this.data.avs_list,  UIDsInFun=this.data.currentUIDs,opInFun=this.data.currentOp;
+    let avsListInFun=this.data.avsList,  UIDsInFun=this.data.currentUIDs,opInFun=this.data.currentOp;
     for (const avs of avsListInFun) {
       b1=avs['whom']==this.data.whomfor_index && avs['what']==this.data.whatfor_index;
       b2=avs['lunarM']==this.data.chinaM_index && avs['lunarD']==this.data.chinaD_index;
@@ -138,7 +138,7 @@ Page({
         chked:false});
     }
     else if (opInFun == 'u'){
-      let index1=avs_list.findIndex(e => e.uid == UIDsInFun[0])
+      let index1=avsList.findIndex(e => e.uid == UIDsInFun[0])
       avsListInFun.splice(index1,0,{uid:UIDsInFun[0], 
         whom:this.data.whomfor_index,
         what:this.data.whatfor_index,
@@ -149,7 +149,7 @@ Page({
 
     this.fn_closeDPP()
     this.setData({
-      avs_list:avsListInFun,
+      avsList:avsListInFun,
       showEditSection:false
     })
   },
@@ -170,7 +170,7 @@ Page({
     this.setData({
       chinaM_index:mIndex,
       chinaD_index:dIndex,
-      dateDPP:chinaM_array[mIndex]+chinaD_array[dIndex],
+      shownChinaMD:chinaM_array[mIndex]+chinaD_array[dIndex],
       showDPP:false
     })
   },
@@ -184,7 +184,7 @@ Page({
     let s2l=calendar.solar2lunar(y,m,d),mCn=s2l.IMonthCn,dCn=s2l.IDayCn;
 
     this.setData({
-        dateDPP: mCn+dCn,
+        shownChinaMD: mCn+dCn,
         chinaM_index:s2l.lMonth-1,
         chinaD_index:s2l.lDay-1
       }
