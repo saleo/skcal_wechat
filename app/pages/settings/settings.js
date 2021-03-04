@@ -33,20 +33,20 @@ Page({
     showEditSection: false,
     showDialog: false,
     dialog_buttons: [{text:'确认'}],
-    currentOp:'', //a for add, u for update
-    currentUIDs:[] // uid list,for update/delete
+    operate:'', //a for add, u for update
+    UIDs:[] // uid list,for update/delete
   },
 
   tapAllChkbox: function() {
     if (this.data.avsList.length==0) return;
     
     let avsListInFun = this.data.avsList;
-    let currentUIDsInfun=[];
+    let uidsInFun=[];
     let allChked=avsListInFun.every(avs => avs.chked ==true);
     if (!allChked){
       avsListInFun.forEach(avs => {
         avs.chked=true
-        currentUIDsInfun.push(avs.uid)
+        uidsInFun.push(avs.uid)
       })
     }
     else{
@@ -54,42 +54,42 @@ Page({
     }
     this.setData({
       avsList:avsListInFun,
-      currentUIDs:currentUIDsInfun
+      UIDs:uidsInFun
     })
   },
 
   tapChkbox: function(e) {
-    let avsListInFun=this.data.avsList,currentUIDsInfun=this.data.currentUIDs;
+    let avsListInFun=this.data.avsList,uidsInFun=this.data.UIDs;
     let uid=e.currentTarget.dataset.uid;
     let idx=avsListInFun.findIndex(item => item.uid=uid),chked=avsListInFun[idx].chked;
     if (chked){
-      let currentIdx=currentUIDsInfun.findIndex(uidCurrent => uidCurrent==uid)
-      currentUIDsInfun.splice(currentIdx,1)
+      let currentIdx=uidsInFun.findIndex(uidCurrent => uidCurrent==uid)
+      uidsInFun.splice(currentIdx,1)
     }
     else{
-      currentUIDsInfun.push(uid)
+      uidsInFun.push(uid)
     }
     avsListInFun[idx].chked=!chked
     this.setData({
       avsList:avsListInFun,
-      currentUIDs:currentUIDsInfun
+      UIDs:uidsInFun
     })
   },
 
   tapAdd: function() {
     this.setData({
-      currentOp:'a',
+      operate:'a',
       showEditSection:true
     })
   },
 
   tapRemove: function() {
-    
+    let currentUI
   },
 
   tapUpdate: function() {
     this.setData({
-      currentOp:'u',
+      operate:'u',
       showEditSection:true
     })
   },
@@ -116,7 +116,7 @@ Page({
   },
   fn_save: function() {
     var b1=false,b2=false;
-    let avsListInFun=this.data.avsList,  UIDsInFun=this.data.currentUIDs,opInFun=this.data.currentOp;
+    let avsListInFun=this.data.avsList,  UIDsInFun=this.data.UIDs,opInFun=this.data.operate;
     for (const avs of avsListInFun) {
       b1=avs['whom']==this.data.whomfor_index && avs['what']==this.data.whatfor_index;
       b2=avs['lunarM']==this.data.chinaM_index && avs['lunarD']==this.data.chinaD_index;
