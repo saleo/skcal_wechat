@@ -31,8 +31,8 @@ Page({
       // },     
     ],
     showEditSection: false,
-    showDialog: false,
-    dialog_buttons: [{text:'确认'}],
+    showDuplicateWarning: false,
+    duplicateDlgButtons: [{text:'确认'}],
     onlyOneDlgButtons: [{text:'确认'}],
     operate:'', //a for add, u for update
     UIDs:[], // uid list,for update/delete
@@ -164,7 +164,7 @@ Page({
       b2=avs['chinaMonthIdx']==this.data.chinaMonthIdx && avs['chinaDayIdx']==this.data.chinaDayIdx;
       if ((b1 && b2) || (b1 && opInFun == 'a')) {
         this.setData({
-          showDialog:true
+          showDuplicateWarning:true
         });
         return;
       }
@@ -232,9 +232,9 @@ Page({
     )
   },
 
-  fn_tapDialogOK: function() {
+  fn_tapDuplicateWarningOK: function() {
     this.setData({
-      showDialog:false
+      showDuplicateWarning:false
     })
   },
 
