@@ -86,7 +86,16 @@ Page({
   },
 
   tapRemove: function() {
-    // let currentUI
+    let uidsInFun=this.data.UIDs,  avsListInFun=this.data.avsList,avsIdx=0;
+    uidsInFun.forEach( uid => {
+      avsIdx=avsListInFun.findIndex(avs => avs.uid == uid)
+      avsListInFun.splice(avsIdx,1)
+    })
+    uidsInFun=[]
+    this.setData({
+      UIDs:uidsInFun,
+      avsList:avsListInFun
+    })
   },
 
   tapUpdate: function() {
