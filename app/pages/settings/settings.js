@@ -60,16 +60,18 @@ Page({
 
   tapChkbox: function(e) {
     let avsListInFun=this.data.avsList,uidsInFun=this.data.UIDs;
-    let uid=e.currentTarget.dataset.uid;
-    let idx=avsListInFun.findIndex(item => item.uid=uid),chked=avsListInFun[idx].chked;
-    if (chked){
-      let currentIdx=uidsInFun.findIndex(uidCurrent => uidCurrent==uid)
-      uidsInFun.splice(currentIdx,1)
+    let uidSelected=e.currentTarget.dataset.uid;
+    let uidIdx=uidsInFun.findIndex(uid => uid == uidSelected);
+    let avsIdx=avsListInFun.findIndex(avs => avs.uid==uidSelected)
+
+    if (uidIdx!=-1){// current item selected
+      avsListInFun[avsIdx].chked=false
+      uidsInFun.splice(uidIdx,1)
     }
     else{
-      uidsInFun.push(uid)
+      avsListInFun[avsIdx].chked=true
+      uidsInFun.push(uidSelected)
     }
-    avsListInFun[idx].chked=!chked
     this.setData({
       avsList:avsListInFun,
       UIDs:uidsInFun
