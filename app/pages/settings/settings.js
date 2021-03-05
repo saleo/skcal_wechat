@@ -1,7 +1,7 @@
 //  pages/settings/settings.js 
 import calendar from '../calendar/lunar-calendar'
-const chinaM_array= ["正月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "冬月", "腊月"];
-const chinaD_array = ["初一", "初二", "初三", "初四", "初五", "初六", "初七", "初八", "初九", "初十", "十一", "十二", "十三", "十四", "十五", "十六", "十七", "十八", "十九", "二十", "廿一", "廿二", "廿三", "廿四", "廿五", "廿六", "廿七", "廿八", "廿九", "三十"];
+const chinaMonthArray= ["正月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "冬月", "腊月"];
+const chinaDayArray = ["初一", "初二", "初三", "初四", "初五", "初六", "初七", "初八", "初九", "初十", "十一", "十二", "十三", "十四", "十五", "十六", "十七", "十八", "十九", "二十", "廿一", "廿二", "廿三", "廿四", "廿五", "廿六", "廿七", "廿八", "廿九", "三十"];
 
 Page({
 
@@ -9,24 +9,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-    whomfor_array: ['祖先','父母','师长','配偶','自己'],
-    whatfor_array: ['生日','忌日','纪念日'],
-    whomfor_index:0,
-    whatfor_index:0,
+    whomforArray: ['祖先','父母','师长','配偶','自己'],
+    whatforArray: ['生日','忌日','纪念日'],
+    whomforIdx:0,
+    whatforIdx:0,
     showDPP: false,  
     shownChinaMD: "",//MMDD in lunar
-    chinaM_array:chinaM_array,
-    chinaD_array:chinaD_array,
-    chinaM_index:0,
-    chinaD_index:0,
+    chinaMonthArray:chinaMonthArray,
+    chinaDayArray:chinaDayArray,
+    chinaMonthIdx:0,
+    chinaDayIdx:0,
     //avs=anniversary
     avsList: [
       // {
       //   uid:0,//unique id, YYMMDDMMSS
-      //   whom:0,// //whom=index of whomfor_array,so do latter items
-      //   what:2,
-      //   lunarM:0,
-      //   lunarD:0,
+      //   whomforIdx:0,// //whomforIdx=index of whomforArray,so do latter items
+      //   whatforIdx:2,
+      //   chinaMonthIdx:0,
+      //   chinaDayIdx:0,
       //   chked:false
       // },     
     ],
@@ -84,7 +84,7 @@ Page({
   },
 
   tapRemove: function() {
-    let currentUI
+    // let currentUI
   },
 
   tapUpdate: function() {
@@ -97,14 +97,14 @@ Page({
   bindWhomChange(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      whomfor_index: e.detail.value
+      whomforIdx: e.detail.value
     })
   },
 
   bindWhatChange: function(e){
     console.log('whatchange=',e.detail);
     this.setData({
-      whatfor_index:e.detail.value
+      whatforIdx:e.detail.value
     })
   },
 
@@ -118,8 +118,8 @@ Page({
     var b1=false,b2=false;
     let avsListInFun=this.data.avsList,  UIDsInFun=this.data.UIDs,opInFun=this.data.operate;
     for (const avs of avsListInFun) {
-      b1=avs['whom']==this.data.whomfor_index && avs['what']==this.data.whatfor_index;
-      b2=avs['lunarM']==this.data.chinaM_index && avs['lunarD']==this.data.chinaD_index;
+      b1=avs['whomforIdx']==this.data.whomforIdx && avs['whatforIdx']==this.data.whatforIdx;
+      b2=avs['chinaMonthIdx']==this.data.chinaMonthIdx && avs['chinaDayIdx']==this.data.chinaDayIdx;
       if ((b1 && b2) || (b1 && opInFun == 'a')) {
         this.setData({
           showDialog:true
@@ -131,19 +131,19 @@ Page({
     if (opInFun=='a'){
       let uidNext=new Date().getTime()
       avsListInFun.push({uid:uidNext, 
-        whom:this.data.whomfor_index,
-        what:this.data.whatfor_index,
-        lunarM:this.data.chinaM_index,
-        lunarD:this.data.chinaD_index,
+        whomforIdx:this.data.whomforIdx,
+        whatforIdx:this.data.whatforIdx,
+        chinaMonthIdx:this.data.chinaMonthIdx,
+        chinaDayIdx:this.data.chinaDayIdx,
         chked:false});
     }
     else if (opInFun == 'u'){
       let index1=avsList.findIndex(e => e.uid == UIDsInFun[0])
       avsListInFun.splice(index1,0,{uid:UIDsInFun[0], 
-        whom:this.data.whomfor_index,
-        what:this.data.whatfor_index,
-        lunarM:this.data.chinaM_index,
-        lunarD:this.data.chinaD_index,
+        whomforIdx:this.data.whomforIdx,
+        whatforIdx:this.data.whatforIdx,
+        chinaMonthIdx:this.data.chinaMonthIdx,
+        chinaDayIdx:this.data.chinaDayIdx,
         chked:false})
     }
 
@@ -168,9 +168,9 @@ Page({
   submitDPP: function(evt){
     let mIndex=evt.detail.chinaMD_index[0],dIndex=evt.detail.chinaMD_index[1];
     this.setData({
-      chinaM_index:mIndex,
-      chinaD_index:dIndex,
-      shownChinaMD:chinaM_array[mIndex]+chinaD_array[dIndex],
+      chinaMonthIdx:mIndex,
+      chinaDayIdx:dIndex,
+      shownChinaMD:chinaMonthArray[mIndex]+chinaDayArray[dIndex],
       showDPP:false
     })
   },
@@ -185,8 +185,8 @@ Page({
 
     this.setData({
         shownChinaMD: mCn+dCn,
-        chinaM_index:s2l.lMonth-1,
-        chinaD_index:s2l.lDay-1
+        chinaMonthIdx:s2l.lMonth-1,
+        chinaDayIdx:s2l.lDay-1
       }
     )
   },
