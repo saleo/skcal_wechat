@@ -34,7 +34,8 @@ Page({
     showDialog: false,
     dialog_buttons: [{text:'确认'}],
     operate:'', //a for add, u for update
-    UIDs:[] // uid list,for update/delete
+    UIDs:[], // uid list,for update/delete
+    allChked:false
   },
 
   tapAllChkbox: function() {
@@ -74,7 +75,8 @@ Page({
     }
     this.setData({
       avsList:avsListInFun,
-      UIDs:uidsInFun
+      UIDs:uidsInFun,
+      allChked:avsListInFun.every(avs => avs.chked ==true)
     })
   },
 
@@ -94,7 +96,8 @@ Page({
     uidsInFun=[]
     this.setData({
       UIDs:uidsInFun,
-      avsList:avsListInFun
+      avsList:avsListInFun,
+      allChked:false
     })
   },
 

@@ -11,7 +11,7 @@
         <view class="weui-grid whomfor-grid grid-caption-line"><text>关系</text></view>
         <view class="weui-grid whatfor-grid grid-caption-line"><text>生忌纪念</text></view>
         <view class="weui-grid date-grid grid-caption-line"><text>日期(农历月日)</text></view>
-        <view class="weui-grid right-grid grid-caption-line"><checkbox bindtap="tapAllChkbox"></checkbox></view>
+        <view class="weui-grid right-grid grid-caption-line"><checkbox bindtap="tapAllChkbox" id="allChkbox" checked="{{allChked}}"></checkbox></view>
 
         <block wx:for="{{avsList}}" wx:key="uid">
           <view class="weui-grid">{{whomforArray[item['whomforIdx']]}}</view>
