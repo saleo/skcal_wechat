@@ -39,3 +39,6 @@
     与已有生忌纪念日重复，请检查修改
   </view>
 </mp-dialog>
+<mp-dialog title="只能修改一个条目" show="{{showOnlyOneWarning}}" mask="true" mask-closable="true" bindbuttontap="fn_tapOnlyOneWarningOK" buttons="{{onlyOneDlgButtons}}">
+  <view>只能选中一个条目进行修改</view>
+</mp-dialog>

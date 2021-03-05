@@ -33,9 +33,11 @@ Page({
     showEditSection: false,
     showDialog: false,
     dialog_buttons: [{text:'确认'}],
+    onlyOneDlgButtons: [{text:'确认'}],
     operate:'', //a for add, u for update
     UIDs:[], // uid list,for update/delete
-    allChked:false
+    allChked:false,
+    showOnlyOneWarning:false
   },
 
   tapAllChkbox: function() {
@@ -83,8 +85,8 @@ Page({
   tapAdd: function() {
     this.setData({
       operate:'a',
-      showEditSection:true
     })
+    this.fn_showEditSection()
   },
 
   tapRemove: function() {
@@ -102,10 +104,30 @@ Page({
   },
 
   tapUpdate: function() {
+    let uids=this.data.UIDs
+    
+    if (uids.length==0) return;
+    if (uids.length>1) {
+      this.setData({
+        showOnlyOneWarning:true
+      })
+      return
+    }
+
+    let avsList=this.data.avsList;
+    let idx=avsList.findIndex(avs => avs.uid==uids[0]);
+    let whomforIdxInFun=avsList[idx].whomforIdx, whatforIdxInFun=avsList[idx].whatforIdx;
+    let chinaMonthIdxInFun=avsList[idx].chinaMonthIdx,chinaDayIdxInFun=avsList[idx].chinaDayIdx;
+
     this.setData({
-      operate:'u',
-      showEditSection:true
+      whomforIdx:whomforIdxInFun,
+      whatforIdx:whatforIdxInFun,
+      chinaMonthIdx:chinaMonthIdxInFun,
+      chinaDayIdx:chinaDayIdxInFun,
+      shownChinaMD:chinaMonthArray[chinaMonthIdxInFun]+chinaDayArray[chinaDayIdxInFun],
+      operate:'u'
     })
+    this.fn_showEditSection()
   },
 
   bindWhomChange(e) {
@@ -119,6 +141,12 @@ Page({
     console.log('whatchange=',e.detail);
     this.setData({
       whatforIdx:e.detail.value
+    })
+  },
+
+  fn_showEditSection: function() {
+    this.setData({
+      showEditSection:true
     })
   },
 
@@ -152,20 +180,20 @@ Page({
         chked:false});
     }
     else if (opInFun == 'u'){
-      let index1=avsList.findIndex(e => e.uid == UIDsInFun[0])
-      avsListInFun.splice(index1,0,{uid:UIDsInFun[0], 
+      let index1=avsListInFun.findIndex(avs => avs.uid == UIDsInFun[0])
+      avsListInFun.splice(index1,1,{uid:UIDsInFun[0], 
         whomforIdx:this.data.whomforIdx,
         whatforIdx:this.data.whatforIdx,
         chinaMonthIdx:this.data.chinaMonthIdx,
         chinaDayIdx:this.data.chinaDayIdx,
-        chked:false})
+        chked:true})
     }
 
-    this.fn_closeDPP()
     this.setData({
       avsList:avsListInFun,
-      showEditSection:false
     })
+
+    this.fn_closeEditSection()
   },
 
   fn_showDPP: function()  {
@@ -185,7 +213,6 @@ Page({
       chinaMonthIdx:mIndex,
       chinaDayIdx:dIndex,
       shownChinaMD:chinaMonthArray[mIndex]+chinaDayArray[dIndex],
-      showDPP:false
     })
   },
 
@@ -209,5 +236,12 @@ Page({
     this.setData({
       showDialog:false
     })
-  }
+  },
+
+  fn_tapOnlyOneWarningOK: function() {
+    this.setData({
+      showOnlyOneWarning:false
+    })
+  }  
 })
+
