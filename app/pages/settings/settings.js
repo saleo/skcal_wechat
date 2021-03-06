@@ -40,6 +40,40 @@ Page({
     showOnlyOneWarning:false
   },
 
+  onShow: function() {
+    var avsEventsInFun=[]
+    wx.getStorage({
+      key: 'anniversary_events',
+      success(res) {
+        let avsEventsByDay=res.data //res.data={dayIdx1:[event1...n],dayIdx2:[event1..n]...}
+        for (const dayIdx in avsEventsByDay) {
+          if (avsEventsByDay.hasOwnProperty(dayIdx)) {       
+            const avsEvents = avsEventsByDay[dayIdx];       
+              avsEvents.forEach( avsEvent => {
+                avsEventsInFun.push({
+                  whomforIdx:avsEvent.whomforIdx,
+                  whatforIdx:avsEvent.whatforIdx,
+                  chinaMonthIdx:avsEvent.chinaMonthIdx,
+                  chinaDayIdx:avsEvent.chinaDayIdx,
+                  uid:avsEvent.uid,
+                  chked:false
+                })
+              })
+          }
+        }
+
+        let nowPages=getCurrentPages(),iLen=nowPages.length
+        let thisPage=nowPages[iLen-1]
+        thisPage.setData({
+          avsList:avsEventsInFun
+        })
+      },
+      fail() {
+        console.log('page onLoad failed getStorage')
+      }
+    })
+  },
+
   tapAllChkbox: function() {
     if (this.data.avsList.length==0) return;
     
@@ -205,6 +239,29 @@ Page({
       avsList:avsListInFun,
     })
 
+    let avsEventsByDay={},dayIdx='',nowDate=new Date(),nowYear=nowDate.getFullYear(),l2s=0,y=0,m=0,d=0
+    avsListInFun.forEach(avs => {
+      l2s=calendar.lunar2solar(nowYear,avs.chinaMonthIdx+1,avs.chinaDayIdx+1)
+      y=l2s.cYear,m=l2s.cMonth,d=l2s.cDay
+      m=m<10?'0'+m:m
+      d=d<10?'0'+d:d
+      dayIdx='d'+y+m+d
+      if (avsEventsByDay[dayIdx]==undefined)
+        avsEventsByDay[dayIdx]=[]
+      avsEventsByDay[dayIdx].push({
+        whomforIdx: avs.whomforIdx,
+        whatforIdx: avs.whatforIdx,
+        chinaMonthIdx:avs.chinaMonthIdx,
+        chinaDayIdx: avs.chinaDayIdx,
+        uid: avs.uid
+      })
+    })
+
+    wx.setStorage({
+      data: avsEventsByDay,
+      key: 'anniversary_events',
+    })
+
     this.fn_closeEditSection()
   },
 
@@ -226,10 +283,6 @@ Page({
       chinaDayIdx:dIndex,
       shownChinaMD:chinaMonthArray[mIndex]+chinaDayArray[dIndex],
     })
-  },
-
-  onLoad: function(options) {
-
   },
 
   fn_tapDuplicateWarningOK: function() {
