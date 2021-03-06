@@ -147,6 +147,8 @@ Page({
       avsList:avsListInFun,
       allChked:false
     })
+
+    this.saveStorage()
   },
 
   tapUpdate: function() {
@@ -239,28 +241,7 @@ Page({
       avsList:avsListInFun,
     })
 
-    let avsEventsByDay={},dayIdx='',nowDate=new Date(),nowYear=nowDate.getFullYear(),l2s=0,y=0,m=0,d=0
-    avsListInFun.forEach(avs => {
-      l2s=calendar.lunar2solar(nowYear,avs.chinaMonthIdx+1,avs.chinaDayIdx+1)
-      y=l2s.cYear,m=l2s.cMonth,d=l2s.cDay
-      m=m<10?'0'+m:m
-      d=d<10?'0'+d:d
-      dayIdx='d'+y+m+d
-      if (avsEventsByDay[dayIdx]==undefined)
-        avsEventsByDay[dayIdx]=[]
-      avsEventsByDay[dayIdx].push({
-        whomforIdx: avs.whomforIdx,
-        whatforIdx: avs.whatforIdx,
-        chinaMonthIdx:avs.chinaMonthIdx,
-        chinaDayIdx: avs.chinaDayIdx,
-        uid: avs.uid
-      })
-    })
-
-    wx.setStorage({
-      data: avsEventsByDay,
-      key: 'anniversary_events',
-    })
+    this.saveStorage()
 
     this.fn_closeEditSection()
   },
@@ -295,6 +276,32 @@ Page({
     this.setData({
       showOnlyOneWarning:false
     })
-  }  
+  },
+
+  saveStorage: function(){
+    let avsEventsByDay={},dayIdx='',nowDate=new Date(),nowYear=nowDate.getFullYear(),l2s=0,y=0,m=0,d=0
+    let avsListInFun = this.data.avsList
+    avsListInFun.forEach(avs => {
+      l2s=calendar.lunar2solar(nowYear,avs.chinaMonthIdx+1,avs.chinaDayIdx+1)
+      y=l2s.cYear,m=l2s.cMonth,d=l2s.cDay
+      m=m<10?'0'+m:m
+      d=d<10?'0'+d:d
+      dayIdx='d'+y+m+d
+      if (avsEventsByDay[dayIdx]==undefined)
+        avsEventsByDay[dayIdx]=[]
+      avsEventsByDay[dayIdx].push({
+        whomforIdx: avs.whomforIdx,
+        whatforIdx: avs.whatforIdx,
+        chinaMonthIdx:avs.chinaMonthIdx,
+        chinaDayIdx: avs.chinaDayIdx,
+        uid: avs.uid
+      })
+    })
+
+    wx.setStorage({
+      data: avsEventsByDay,
+      key: 'anniversary_events',
+    })    
+  }
 })
 
