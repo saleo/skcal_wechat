@@ -83,7 +83,19 @@ Page({
   },
 
   tapAdd: function() {
+    let date=new Date(),y=date.getFullYear();
+    var d=date.getDate();
+    var m=date.getMonth()+1;
+    m=m<10?'0'+m:m;
+    d=d<10?'0'+d:d;
+    let s2l=calendar.solar2lunar(y,m,d),mCn=s2l.IMonthCn,dCn=s2l.IDayCn;
+
     this.setData({
+      whomforIdx:0,
+      whatforIdx:0,
+      shownChinaMD: mCn+dCn,
+      chinaMonthIdx:s2l.lMonth-1,
+      chinaDayIdx:s2l.lDay-1,
       operate:'a',
     })
     this.fn_showEditSection()
@@ -217,19 +229,7 @@ Page({
   },
 
   onLoad: function(options) {
-    let date=new Date(),y=date.getFullYear();
-    var d=date.getDate();
-    var m=date.getMonth()+1;
-    m=m<10?'0'+m:m;
-    d=d<10?'0'+d:d;
-    let s2l=calendar.solar2lunar(y,m,d),mCn=s2l.IMonthCn,dCn=s2l.IDayCn;
 
-    this.setData({
-        shownChinaMD: mCn+dCn,
-        chinaMonthIdx:s2l.lMonth-1,
-        chinaDayIdx:s2l.lDay-1
-      }
-    )
   },
 
   fn_tapDuplicateWarningOK: function() {
