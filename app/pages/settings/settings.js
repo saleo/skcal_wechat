@@ -69,7 +69,7 @@ Page({
         })
       },
       fail() {
-        console.log('page onLoad failed getStorage')
+        console.log('SettingsPage onShow failed getStorage')
       }
     })
   },
