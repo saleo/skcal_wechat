@@ -156,6 +156,16 @@
     position: relative;
     background-color: red;
 }
+.rect_Red {
+    width: 15rpx;
+    height: 15rpx;
+    display: inline-block;
+    padding: 1rpx 0;
+    margin-left: 5rpx;
+    box-sizing: border-box;
+    position: relative;
+    background-color: red;
+}
 
 .circle_Blue {
     width: 15rpx;

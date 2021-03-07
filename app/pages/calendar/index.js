@@ -14,6 +14,11 @@ Component({
             }
         },
 
+        avsEventsByDay:{
+            type: Object,
+            value: {}
+        },
+
         // 视图类型
         viewType: {
             type: String,

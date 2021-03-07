@@ -44,6 +44,7 @@
                         <view class='solar-day-label'>{{dayItem.day}}</view>
                         <view class='lunar-day-label'>{{dayItem.label}}</view>
                         <view class='{{dayItem.color ==""? "nodisplay":"circle_"+dayItem.color}}' />
+                        <view class='{{avsEventsByDay[dayItem.dayIdx]==null? "nodisplay": "rect_Red"}}'/>
                    </view>
 
                 </view>

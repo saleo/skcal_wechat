@@ -24,39 +24,22 @@ Page({
         //forbidden information
         fbiDesc:"",
         lunarDateMD:"",
-        htmlSnip: htmlSnip
+        htmlSnip: htmlSnip,
+        avsEventsByDayInPage:{}
     },
 
     onLoad(){
-        console.log('onload...ymd=',this.data.year,this.data.month,this.data.day)
-    },
 
-    onShow() {
-        var avsEventsInFun=[]
         wx.getStorage({
           key: 'anniversary_events',
           success(res) {
             let avsEventsByDay=res.data //res.data={dayIdx1:[event1...n],dayIdx2:[event1..n]...}
-            for (const dayIdx in avsEventsByDay) {
-              if (avsEventsByDay.hasOwnProperty(dayIdx)) {       
-                const avsEvents = avsEventsByDay[dayIdx];       
-                  avsEvents.forEach( avsEvent => {
-                    avsEventsInFun.push({
-                      whomforIdx:avsEvent.whomforIdx,
-                      whatforIdx:avsEvent.whatforIdx,
-                      chinaMonthIdx:avsEvent.chinaMonthIdx,
-                      chinaDayIdx:avsEvent.chinaDayIdx,
-                      uid:avsEvent.uid,
-                      chked:false
-                    })
-                  })
-              }
-            }
+ 
     
             let nowPages=getCurrentPages(),iLen=nowPages.length
             let thisPage=nowPages[iLen-1]
             thisPage.setData({
-              avsList:avsEventsInFun
+              avsEventsByDayInPage:avsEventsByDay
             })
           },
           fail() {

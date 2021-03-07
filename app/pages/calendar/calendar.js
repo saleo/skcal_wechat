@@ -209,9 +209,9 @@ function createMonthView(dateYM, handler) {
 
         // 当前日期字符串形式
         item.date = item.year + "-" + item.month + "-" + item.day;
-
+        item.dayIdx='d'+item.year+toDouble(item.month)+toDouble(item.day)
         //item.fbi= [index][summary,color,uid]
-        item.fbi=fbi['d'+item.year+toDouble(item.month)+toDouble(item.day)];
+        item.fbi=fbi[item.dayIdx];
         item.color='';
 
         if (item.fbi != undefined)
