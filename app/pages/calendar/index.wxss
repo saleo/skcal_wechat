@@ -142,10 +142,6 @@
     color: #222;
 }
 
-.nodisplay{
-    display: none;
-}
-
 .circle_Red {
     width: 15rpx;
     height: 15rpx;

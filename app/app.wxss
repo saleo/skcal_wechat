@@ -110,3 +110,6 @@
 .view_block {
   display: block;
 }
+.nodisplay {
+  display: none;
+}
