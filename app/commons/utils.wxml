@@ -4,7 +4,8 @@
     title="戒期信息" 
     subTitle="{{year}}-{{month}}-{{day}},{{lunarDateMD}}">
       <view slot='desc'>
-          <text>{{fbiDesc}}</text>
+        <text>{{avsEvents}}</text>
+        <text>{{skEvents}}</text>
       </view>
 
   </mp-half-screen-dialog>

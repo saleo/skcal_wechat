@@ -15,4 +15,4 @@
     <template is="foot_mottos" data="{{mottos_digest:mottos_digest,year:year,month:month}}" />
 
 </view>
-<template is="utils" data="{{fbi_show:fbi_show,year:year,month:month,day:day,lunarDateMD:lunarDateMD,fbiDesc:fbiDesc,mottos_show:mottos_show,mottos4Month:mottos4Month}}" />
+<template is="utils" data="{{avsEvents:avsEvents_desc,fbi_show:fbi_show,year:year,month:month,day:day,lunarDateMD:lunarDateMD,skEvents:skEvents,mottos_show:mottos_show,mottos4Month:mottos4Month}}" />

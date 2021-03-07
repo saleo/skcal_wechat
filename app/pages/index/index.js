@@ -4,6 +4,8 @@ import skmottos from '../../resources/skmottos.js'
 
 const htmlSnip ="<div align='center'><a hrer='https://www.shoukang.org'>https://www.shoukang.org</a></div>"
 const hr="<hr color='red' />"
+const whomforArray= ['祖先','父母','师长','配偶','自己']
+const whatforArray=['生日','忌日','纪念日']
 
 function getToday() {
     let date = new Date();
@@ -25,8 +27,11 @@ Page({
         fbiDesc:"",
         lunarDateMD:"",
         htmlSnip: htmlSnip,
-        avsEventsByDayInPage:{}
+        avsEventsByDayInPage:{},
+        avsEvents_desc:""
     },
+
+    avsEventsCurrentDayWithLineBreak:[],
 
     onLoad(){
 
@@ -57,17 +62,28 @@ Page({
     },
 
     fbi_prompt(evt) {
-        let fbi=evt.detail.value.fbi;
+        let fbi=evt.detail.value.fbi,avsEventsByDayInPage=this.data.avsEventsByDayInPage
+        let avsEventsCurrentDay=avsEventsByDayInPage[evt.detail.value.dayIdx]
         let lunar=evt.detail.value.lunar;
-        const iLen=Object.entries(fbi).length;
-        let desc="";
+        let iLen=Object.entries(fbi).length;
+        let skEvents="";
         for (let i=0;i<iLen;i++){
-            desc=desc+fbi['d'+i][0]+'\n'
+            skEvents=skEvents+fbi['d'+i][0]+'\n\n'
+        }
+        let avsEventsCurrentDayWithLineBreak="",whomfor="",whatfor=""
+        if (avsEventsCurrentDay!=undefined) {
+            iLen=avsEventsCurrentDay.length
+            for (let i=0;i<iLen;i++){
+                whomfor=whomforArray[avsEventsCurrentDay[i]['whomforIdx']]
+                whatfor=whatforArray[avsEventsCurrentDay[i]['whatforIdx']]
+                avsEventsCurrentDayWithLineBreak=avsEventsCurrentDayWithLineBreak+whomfor+whatfor+'\n\n'
+            }
         }
         this.setData({
             fbi_show: true,
-            fbiDesc: desc,
-            lunarDateMD: lunar['IMonthCn']+lunar['IDayCn']
+            skEvents: skEvents,
+            lunarDateMD: lunar['IMonthCn']+lunar['IDayCn'],
+            avsEvents_desc: avsEventsCurrentDayWithLineBreak
         });
     },
 
