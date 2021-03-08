@@ -23,7 +23,7 @@
     "compileHotReLoad": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-    "useApiHostProcess": true,
+    "useApiHostProcess": false,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -40,7 +40,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.15.0",
-  "appid": "wx4f96fa767714d9a6",
+  "appid": "wxba340bcd9707423f",
   "projectname": "skcal_wechat",
   "debugOptions": {
     "hidedInDevtools": []

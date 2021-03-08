@@ -45,3 +45,6 @@
 .sk_wrap{
   white-space:pre-wrap;
 }
+.weui-btn-area_inline{
+  padding-bottom: 10rpx;
+}
