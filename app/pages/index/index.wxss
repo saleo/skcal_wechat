@@ -22,4 +22,11 @@
     left: 5%;
     font-size: medium; 
 }
+.sk_weui-media-box__desc{
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;    
+    font-size: 14px;
+    padding-top: 4px
+}
 

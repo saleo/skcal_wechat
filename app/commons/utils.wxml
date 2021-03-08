@@ -7,11 +7,11 @@
         <view class="weui-panel__bd">
             <view class="{{avsEvents==''? 'nodisplay':'weui-media-box weui-media-box_text'}}">
                 <view class="weui-media-box__title weui-media-box__title_in-text">自定义戒期</view>
-                <view class="weui-media-box__desc">{{avsEvents}}</view>
+                <view class="sk_weui-media-box__desc">{{avsEvents}}</view>
             </view>
             <view class="weui-media-box weui-media-box_text">
                 <view class="weui-media-box__title weui-media-box__title_in-text">通用戒期</view>
-                <view class="weui-media-box__desc">{{skEvents}}</view>
+                <view class="sk_weui-media-box__desc">{{skEvents}}</view>
             </view>
         </view>      
       </view>
