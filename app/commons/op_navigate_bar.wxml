@@ -1,19 +1,19 @@
 <template name="op_navigate_bar">
     <view class="op_navigate_bar">
         <view class="hr_divider"></view>
-        <navigator url="/pages/info/intro" open-type="redirect">
+        <navigator url="/pages/info/intro" >
             <image src="../../resources/info.png" class="op_image" />
         </navigator>
-        <navigator url="/pages/info/donators" open-type="redirect">
+        <navigator url="/pages/info/donators" >
             <image src="../../resources/donators.png" class="op_image" />
         </navigator>
-        <navigator url="/pages/info/health" open-type="redirect">
+        <navigator url="/pages/info/health" >
             <image src="../../resources/health.jpg" class="op_image" />
         </navigator>
-        <navigator url="/pages/index/index" open-type="redirect">
+        <navigator url="/pages/index/index" >
             <image src="../../resources/today.png" class="op_image" />
         </navigator>               
-        <navigator url="/pages/settings/settings" open-type="redirect">
+        <navigator url="/pages/settings/settings" >
             <image src="../../resources/settings.png" class="op_image" />
         </navigator>
         <view class="hr_divider"></view>
