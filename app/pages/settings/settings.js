@@ -233,7 +233,7 @@ Page({
         whatforIdx:this.data.whatforIdx,
         chinaMonthIdx:this.data.chinaMonthIdx,
         chinaDayIdx:this.data.chinaDayIdx,
-        chked:true})
+        chked:false})
     }
 
     this.setData({
