@@ -1,7 +1,6 @@
 //  pages/settings/settings.js 
 import calendar from '../calendar/lunar-calendar'
-const chinaMonthArray= ["正月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "冬月", "腊月"];
-const chinaDayArray = ["初一", "初二", "初三", "初四", "初五", "初六", "初七", "初八", "初九", "初十", "十一", "十二", "十三", "十四", "十五", "十六", "十七", "十八", "十九", "二十", "廿一", "廿二", "廿三", "廿四", "廿五", "廿六", "廿七", "廿八", "廿九", "三十"];
+const common=require('../../commons/common')
 
 Page({
 
@@ -9,14 +8,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    whomforArray: ['祖先','父母','师长','配偶','自己'],
-    whatforArray: ['生日','忌日','纪念日'],
+    whomforArray: common.whomforArray, 
+    whatforArray: common.whatforArray,
     whomforIdx:0,
     whatforIdx:0,
     showDPP: false,  
     shownChinaMD: "",//MMDD in lunar
-    chinaMonthArray:chinaMonthArray,
-    chinaDayArray:chinaDayArray,
+    chinaMonthArray:common.chinaMonthArray,
+    chinaDayArray:common.chinaDayArray,
     chinaMonthIdx:0,
     chinaDayIdx:0,
     //avs=anniversary
@@ -172,7 +171,7 @@ Page({
       whatforIdx:whatforIdxInFun,
       chinaMonthIdx:chinaMonthIdxInFun,
       chinaDayIdx:chinaDayIdxInFun,
-      shownChinaMD:chinaMonthArray[chinaMonthIdxInFun]+chinaDayArray[chinaDayIdxInFun],
+      shownChinaMD:common.chinaMonthArray[chinaMonthIdxInFun]+common.chinaDayArray[chinaDayIdxInFun],
       operate:'u'
     })
     this.fn_showEditSection()
@@ -262,7 +261,7 @@ Page({
     this.setData({
       chinaMonthIdx:mIndex,
       chinaDayIdx:dIndex,
-      shownChinaMD:chinaMonthArray[mIndex]+chinaDayArray[dIndex],
+      shownChinaMD:common.chinaMonthArray[mIndex]+common.chinaDayArray[dIndex],
     })
   },
 

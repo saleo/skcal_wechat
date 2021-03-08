@@ -1,11 +1,7 @@
 // pages/index/index.js
 import skmottos_digest from '../../resources/skmottos_digest.js'
 import skmottos from '../../resources/skmottos.js'
-
-const htmlSnip ="<div align='center'><a hrer='https://www.shoukang.org'>https://www.shoukang.org</a></div>"
-const hr="<hr color='red' />"
-const whomforArray= ['祖先','父母','师长','配偶','自己']
-const whatforArray=['生日','忌日','纪念日']
+const common = require('../../commons/common')
 
 function getToday() {
     let date = new Date();
@@ -26,7 +22,7 @@ Page({
         //forbidden information
         fbiDesc:"",
         lunarDateMD:"",
-        htmlSnip: htmlSnip,
+        htmlSnip: '',
         avsEventsByDayInPage:{},
         avsEvents_desc:""
     },
@@ -74,8 +70,8 @@ Page({
         if (avsEventsCurrentDay!=undefined) {
             iLen=avsEventsCurrentDay.length
             for (let i=0;i<iLen;i++){
-                whomfor=whomforArray[avsEventsCurrentDay[i]['whomforIdx']]
-                whatfor=whatforArray[avsEventsCurrentDay[i]['whatforIdx']]
+                whomfor=common.whomforArray[avsEventsCurrentDay[i]['whomforIdx']]
+                whatfor=common.whatforArray[avsEventsCurrentDay[i]['whatforIdx']]
                 avsEventsCurrentDayWithLineBreak=avsEventsCurrentDayWithLineBreak+whomfor+whatfor+'\n\n'
             }
         }
