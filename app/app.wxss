@@ -113,3 +113,14 @@
 .nodisplay {
   display: none;
 }
+.image_button{
+  padding:0;
+  opacity: 0;
+}
+.image_button2{
+  padding:0;
+  background-color: transparent;
+}
+.image_button2::after{
+  border: none; 
+}
