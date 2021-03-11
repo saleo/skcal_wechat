@@ -8,6 +8,14 @@ Page({
 
   },
 
+  tapNavigate(e){
+    let page=e.currentTarget.dataset.page
+    if (page!="/pages/info/donators"){
+        wx.navigateTo({
+            url: page,
+          })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

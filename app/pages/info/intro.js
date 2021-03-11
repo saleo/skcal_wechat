@@ -55,6 +55,14 @@ Page({
   onChange(e) {
     const index = e.detail.index
     this.setData({activeTab: index})
-  }
+  },
+  tapNavigate(e){
+    let page=e.currentTarget.dataset.page
+    if (page!="/pages/info/intro"){
+        wx.navigateTo({
+            url: page,
+          })
+    }
+}
 
 })

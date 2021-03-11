@@ -91,5 +91,19 @@ Page({
             mottos4Month: mottos1
         })
     },
-
+    tapNavigate(e){
+        let page=e.currentTarget.dataset.page
+        if (page!="/pages/index/index"){
+            wx.navigateTo({
+                url: page,
+              })
+        }
+        else{
+            let m=getToday()[1]
+            if (m!=this.data.month)
+                wx.navigateTo({
+                  url: page
+                })
+        }
+    }
 })

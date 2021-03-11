@@ -301,6 +301,14 @@ Page({
       data: avsEventsByDay,
       key: 'anniversary_events',
     })    
-  }
+  },
+  tapNavigate(e){
+    let page=e.currentTarget.dataset.page
+    if (page!="/pages/settings/settings"){
+        wx.navigateTo({
+            url: page,
+          })
+    }
+}
 })
 

@@ -1,27 +1,27 @@
 <template name="op_navigate_bar">
     <view class="op_navigate_bar">
         <view class="hr_divider"></view>
-        <navigator url="/pages/info/intro" >
+        <view bindtap="tapNavigate" data-page="/pages/info/intro">
             <button class="image_button" plain="true" />
             <image src="../../resources/info.png" class="op_image" />
-        </navigator>
-        <navigator url="/pages/info/donators" >
+        </view>
+        <view bindtap="tapNavigate" data-page="/pages/info/donators">
             <button class="image_button" plain="true" />
             <image src="../../resources/donators.png" class="op_image" />
-        </navigator>
-        <navigator url="/pages/info/health" >
+        </view>
+        <view bindtap="tapNavigate" data-page="/pages/info/health">
             <button class="image_button" plain="true" />
             <image src="../../resources/health.jpg" class="op_image" />
-        </navigator>
-        <navigator url="/pages/index/index" >
+        </view>
+        <view bindtap="tapNavigate" data-page="/pages/index/index">
             <button class="image_button" plain="true" />
             <image src="../../resources/today.png" class="op_image" />
-        </navigator>               
-        <navigator url="/pages/settings/settings" >
+        </view>
+        <view bindtap="tapNavigate" data-page="/pages/settings/settings">
             <button class="image_button" plain="true" />
             <image src="../../resources/settings.png" class="op_image" />
-        </navigator>
-        <view>
+        </view>
+        <view >
             <button class="image_button2" open-type="feedback">
                 <image src="../../resources/feedback.png" class="op_image" />
             </button>
