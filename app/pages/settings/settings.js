@@ -42,6 +42,21 @@ Page({
 
   onShow: function() {
     var avsEventsInFun=[]
+    let nowPages=getCurrentPages(),iLen=nowPages.length
+    let thisPage=nowPages[iLen-1]
+    
+    wx.getStorage({
+      key: 'autoBackup_chked',
+      success(res) {
+        thisPage.setData({
+          autoBackup_chked: res.data
+        })
+      },
+      fail() {
+        console.log('settings: onLoad failed getStorage-autoBackup,maybe its first run?')
+      }
+    })    
+
     wx.getStorage({
       key: 'anniversary_events',
       success(res) {
@@ -62,14 +77,12 @@ Page({
           }
         }
 
-        let nowPages=getCurrentPages(),iLen=nowPages.length
-        let thisPage=nowPages[iLen-1]
         thisPage.setData({
           avsList:avsEventsInFun
         })
       },
       fail() {
-        console.log('SettingsPage onShow failed getStorage')
+        console.log('SettingsPage onShow failed getStorage-AVS')
       }
     })
   },
@@ -312,7 +325,23 @@ Page({
     }
   },
   tapAutoBackup() {
-    
+
+    let autoBackup_chked= this.data.autoBackup_chked
+    let nowPages=getCurrentPages(),iLen=nowPages.length
+    let thisPage=nowPages[iLen-1]
+
+    wx.setStorage({
+      data: !autoBackup_chked,
+      key: 'autoBackup_chked',
+      success() {
+        thisPage.setData({
+          autoBackup_chked:!autoBackup_chked
+        })    
+      },
+      fail() {
+        console.log('autoBackup tapping failed to setStorage')
+      }
+    })
   },
 
   tapRestore() {
