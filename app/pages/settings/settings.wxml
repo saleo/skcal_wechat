@@ -21,10 +21,12 @@
         </block>
       </view>
     </scroll-view> 
+    <view><checkbox checked="{{autoBackup_chked}}" bindTap="tapAutoBackup"></checkbox><text class="txt_autoback">自动备份到云端服务器上(选中则在离开本页面时自动备份)</text></view>
     <view class="weui-btn-area_inline">
       <button class="weui-btn" type="primary" size="mini" bindtap="tapAdd">添加</button>
       <button class="weui-btn" type="primary" size="mini" bindtap="tapRemove">删除选中</button>
       <button class="weui-btn" type="primary" size="mini"bindtap="tapUpdate">修改选中</button>
+      <button class="weui-btn" type="primary" size="mini"bindtap="tapRestore">云端恢复</button>
     </view>
     <template is="op_navigate_bar" />
     <template is="foot_sk" />

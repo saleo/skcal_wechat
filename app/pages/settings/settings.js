@@ -36,7 +36,8 @@ Page({
     operate:'', //a for add, u for update
     UIDs:[], // uid list,for update/delete
     allChked:false,
-    showOnlyOneWarning:false
+    showOnlyOneWarning:false,
+    autoBackup_chked:false
   },
 
   onShow: function() {
@@ -309,6 +310,13 @@ Page({
             url: page,
           })
     }
-}
+  },
+  tapAutoBackup() {
+    
+  },
+
+  tapRestore() {
+
+  }
 })
 

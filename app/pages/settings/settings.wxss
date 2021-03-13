@@ -48,3 +48,15 @@
 .weui-btn-area_inline{
   padding-bottom: 10rpx;
 }
+.weui-btn{
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+.weui-grids .weui-grid{
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+.txt_autoback{
+  font-size: xx-small;
+  font-style: italic;
+}
