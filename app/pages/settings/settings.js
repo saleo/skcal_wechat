@@ -378,15 +378,17 @@ Page({
     const db=wx.cloud.database()
     const avsTable=db.collection('anniversary')
     avsTable.get().then(res => {
-      this.setData({
-        avsList: res.data[0].avsEvents
-      })
+      console.log('res which come from table.get',res)
+      if (res.data.length!=0){
+        this.setData({
+          avsList: res.data[0].avsEvents
+        })
+      }
     
-    getApp().global_avsEventsInSettingsPage =this.data.avsList
-    this.saveChangeToStorage()
+      getApp().global_avsEventsInSettingsPage =this.data.avsList
+      this.saveChangeToStorage()
 
     })
-
   }
 })
 
