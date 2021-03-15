@@ -21,7 +21,7 @@ Page({
     //avs=anniversary
     avsList: [
       // {
-      //   uid:0,//unique id, YYMMDDMMSS
+      //   uid:0,//unique id, time in milliSecond
       //   whomforIdx:0,// //whomforIdx=index of whomforArray,so do latter items
       //   whatforIdx:2,
       //   chinaMonthIdx:0,
@@ -44,7 +44,17 @@ Page({
     var avsEventsInFun=[]
     let nowPages=getCurrentPages(),iLen=nowPages.length
     let thisPage=nowPages[iLen-1]
-    
+
+    // const db = wx.cloud.database()
+    // db.collection('anniversary').get({
+    //   success: function(res){
+    //     console.log(res)
+    //   },
+    //   fail: function(res) {
+    //     console.log('failed anniversary fetch=',res)
+    //   }
+    // })
+
     wx.getStorage({
       key: 'autoBackup_chked',
       success(res) {
@@ -53,7 +63,15 @@ Page({
         })
       },
       fail() {
-        console.log('settings: onLoad failed getStorage-autoBackup,maybe its first run?')
+        if (getApp().firstRun){
+          console.log('settings: onShow failed getStorage ,since its first run')
+          wx.setStorage({
+            key: 'autoBackup_chked',
+            data: false
+          })
+        }
+        else
+          console.log('settings: onShow failed getStorage')
       }
     })    
 
@@ -82,9 +100,18 @@ Page({
         })
       },
       fail() {
-        console.log('SettingsPage onShow failed getStorage-AVS')
+        if (getApp().firstRun){
+          console.log('SettingsPage onShow failed getStorage-AVS,since its first run')
+          wx.setStorage({
+            data: [],
+            key: 'anniversary_events',
+          })
+        }
+        else
+          console.log('SettingsPage onShow failed getStorage-AVS')
       }
     })
+    getApp().firstRun =false
   },
 
   tapAllChkbox: function() {
@@ -161,7 +188,8 @@ Page({
       allChked:false
     })
 
-    this.saveStorage()
+    getApp().global_avsEventsInSettingsPage =this.data.avsList
+    this.saveChangeToStorage()
   },
 
   tapUpdate: function() {
@@ -254,7 +282,8 @@ Page({
       avsList:avsListInFun,
     })
 
-    this.saveStorage()
+    getApp().global_avsEventsInSettingsPage =this.data.avsList
+    this.saveChangeToStorage()
 
     this.fn_closeEditSection()
   },
@@ -291,7 +320,7 @@ Page({
     })
   },
 
-  saveStorage: function(){
+  saveChangeToStorage: function(){
     let avsEventsByDay={},dayIdx='',nowDate=new Date(),nowYear=nowDate.getFullYear(),l2s=0,y=0,m=0,d=0
     let avsListInFun = this.data.avsList
     avsListInFun.forEach(avs => {
@@ -314,8 +343,9 @@ Page({
     wx.setStorage({
       data: avsEventsByDay,
       key: 'anniversary_events',
-    })    
+    })
   },
+
   tapNavigate(e){
     let page=e.currentTarget.dataset.page
     if (page!="/pages/settings/settings"){
@@ -345,6 +375,17 @@ Page({
   },
 
   tapRestore() {
+    const db=wx.cloud.database()
+    const avsTable=db.collection('anniversary')
+    avsTable.get().then(res => {
+      this.setData({
+        avsList: res.data[0].avsEvents
+      })
+    
+    getApp().global_avsEventsInSettingsPage =this.data.avsList
+    this.saveChangeToStorage()
+
+    })
 
   }
 })

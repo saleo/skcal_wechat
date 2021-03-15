@@ -57,6 +57,6 @@
   padding-bottom: 4px !important;
 }
 .txt_autoback{
-  font-size: xx-small;
+  font-size: x-small;
   font-style: italic;
 }

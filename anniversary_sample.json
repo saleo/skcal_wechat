@@ -1,0 +1,39 @@
+{"avsEvents": {
+	  "d20210306": [
+	    {
+	      "whomforIdx": 0,
+	      "whatforIdx": "1",
+	      "chinaMonthIdx": 0,
+	      "chinaDayIdx": 22,
+	      "uid": 1615045179952
+	    }
+	  ],
+	  "d20210228": [
+	    {
+	      "whomforIdx": "1",
+	      "whatforIdx": 0,
+	      "chinaMonthIdx": 0,
+	      "chinaDayIdx": 16,
+	      "uid": 1615113585199
+	    }
+	  ],
+	  "d20210402": [
+	    {
+	      "whomforIdx": "1",
+	      "whatforIdx": 0,
+	      "chinaMonthIdx": 1,
+	      "chinaDayIdx": 20,
+	      "uid": 1615113678536
+	    }
+	  ],
+	  "d20210308": [
+	    {
+	      "whomforIdx": 0,
+	      "whatforIdx": "2",
+	      "chinaMonthIdx": 0,
+	      "chinaDayIdx": 24,
+	      "uid": 1615164621504
+	    }
+	  ]
+	}
+}
