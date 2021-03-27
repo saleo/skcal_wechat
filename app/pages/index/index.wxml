@@ -8,7 +8,7 @@
 
     <template is="head" data="{{year:year,month:month}}"/>
 
-    <calendar value='{{year}}-{{month}}-{{day}}' avsEventsByDay="{{avsEventsByDayInPage}}" bindchange='change' bindfbi_prompt='fbi_prompt'/>
+    <calendar value='{{year}}/{{month}}/{{day}}' avsEventsByDay="{{avsEventsByDayInPage}}" bindchange='change' bindfbi_prompt='fbi_prompt'/>
 
     <template is="op_navigate_bar" />
 

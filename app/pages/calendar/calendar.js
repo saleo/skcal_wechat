@@ -77,15 +77,15 @@ function getCurrentYear(){
 
 /*return year as integer*/
 function getYearFromStr(date){
-    return (date.split('-')[0])
+    return (date.split("/")[0])
 }
 
 function getMonthFromStr(date){
-    return (date.split('-')[1])
+    return (date.split("/")[1])
 }
 
 function getDayFromStr(date){
-    return (date.split('-')[2])
+    return (date.split("/")[2])
 }
 
 /**
@@ -120,11 +120,11 @@ function createMonthView(dateYM, handler) {
     // 格式化日期, ios 只认识这样的：2018/9/9 ，不认识这样的：2018-9-9
     // 而且必须是 年/月/日，一个不能少
     
-    let dateYMD = dateYM+'-1'
-    dateYMD.split('-').join("/");
+    let dateYMD = dateYM+'/1'
+    // dateYMD.split("/").join("/");
 
     // 获取今天的日期
-    let todayStr = getToday().join("-"),
+    let todayStr = getToday().join("/"),
         date = new Date(dateYMD),
         year = date.getFullYear(),
         month = date.getMonth() + 1,
@@ -208,7 +208,7 @@ function createMonthView(dateYM, handler) {
         item.week = (index - 1) % 7;
 
         // 当前日期字符串形式
-        item.date = item.year + "-" + item.month + "-" + item.day;
+        item.date = item.year + "/" + item.month + "/" + item.day;
         item.dayIdx='d'+item.year+toDouble(item.month)+toDouble(item.day)
         //item.fbi= [index][summary,color,uid]
         item.fbi=fbi[item.dayIdx];
@@ -296,8 +296,8 @@ class Calendar {
             this.currentView = view;
             this.currentYear = view.year;
             this.currentMonth = view.month; 
-            this.prevMonth = view.prevYear + "-" + view.prevMonth;
-            this.nextMonth = view.nextYear + "-" + view.nextMonth;
+            this.prevMonth = view.prevYear + "/" + view.prevMonth;
+            this.nextMonth = view.nextYear + "/" + view.nextMonth;
         }
         return view.view
     }
@@ -356,7 +356,7 @@ class Calendar {
             this.currentWeek = date;
             this.prevWeek = this.getDiffDate(date, -7);
             this.nextWeek = this.getDiffDate(date, 7);
-            this.currentDay = date.split("-")[2];
+            this.currentDay = date.split("/")[2];
         }
         return {
             view,
@@ -441,16 +441,16 @@ class Calendar {
      * @return {String}      年-月
      */
     getValue(date) {
-        let value = date ? date.split("-").map(Number) : getToday();
-        date = value.join("-");
+        let value = date ? date.split("/").map(Number) : getToday();
+        date = value.join("/");
         if (value.length > 2) {
             this.currentDay = value.pop();
         } else {
-            date += "-" + this.currentDay;
+            date += "/" + this.currentDay;
         }
         return {
             date,
-            month: value.join("-")
+            month: value.join("/")
         }
     }
 
@@ -465,13 +465,13 @@ class Calendar {
     getDiffDate(date, diff) {
 
         // 把 “日” 转换为数字，因为它需要计算
-        let value = date.split("-");
+        let value = date.split("/");
         date = new Date(value[0], value[1] - 1, parseInt(value[2]) + diff);
         return [
             date.getFullYear(),
             date.getMonth() + 1,
             date.getDate()
-        ].join("-")
+        ].join("/")
     }
 }
 

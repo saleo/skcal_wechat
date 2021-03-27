@@ -108,7 +108,7 @@ Component({
                 if (evt.detail.source == "touch") {
                     let dateToset = "auto",todayYMD=getToday();
                     if (todayYMD[1] == calendar.currentMonth){
-                        dateToset = todayYMD.join('-')
+                        dateToset = todayYMD.join("/")
                     }
                                         
                     this.setDate(this.data.viewType == "week" ? calendar.currentWeek : dateToset);
@@ -156,7 +156,7 @@ Component({
             }
 
             // 保存当前选择的 “日”
-            calendar.currentDay = date.split("-")[2];
+            calendar.currentDay = date.split("/")[2];
             console.log('selectDate=',date);
             this.setDate(date);
             if (item.fbi != undefined){
@@ -179,7 +179,7 @@ Component({
                 if (calendar.currentDay > calendar.currentView.totalDay) {
                     calendar.currentDay = calendar.currentView.totalDay;
                 }
-                date = calendar.currentYear+'-'+ calendar.currentMonth + "-" + DAY0;
+                date = calendar.currentYear+"/"+ calendar.currentMonth + "/" + DAY0;
             }
             console.log('setDate date=',date)
 
@@ -207,7 +207,7 @@ Component({
             // 根据视图类型使用不同的刷新机制
             this.setData(
                 this.data.viewType == "month" ?
-                calendar.refreshMonthViews(y+'-'+m) :
+                calendar.refreshMonthViews(y+"/"+m) :
                 calendar.refreshWeekViews(value.date)
             );
 

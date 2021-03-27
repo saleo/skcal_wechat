@@ -1476,7 +1476,7 @@ const formatTime = date => {
     const year = date.getFullYear()
     const month = date.getMonth() + 1
     const day = date.getDate()
-    return [year, month, day].map(formatNumber).join('-')
+    return [year, month, day].map(formatNumber).join("/")
 }
 
 const formatNumber = n => {
@@ -1541,7 +1541,7 @@ Component({
         let nlDateNoYear = nlDateHandlerNoYear(this.data.nlDateNoYearMutiIndex);
         let glDateMutiIndex = this.data.glDateMutiIndex;
         let glDateNoYearMutiIndex = this.data.glDateNoYearMutiIndex;
-        let [y,m,d] = this.data.initDate.split('-');
+        let [y,m,d] = this.data.initDate.split("/");
         glDateMutiIndex = [glYear.indexOf(parseInt(y)), parseInt(m) - 1, parseInt(d) - 1];
         let glDate = glDateHandler(glDateMutiIndex);
         glDateNoYearMutiIndex = [parseInt(m) - 1, parseInt(d) - 1];
