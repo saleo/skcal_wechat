@@ -6,7 +6,8 @@
 }
 
 .mySwiper {
-    height: 600rpx;
+    height: calc(100vh - 513rpx);
+    /* height: 600rpx; */
     position: relative;
 }
 
@@ -42,7 +43,8 @@
     box-sizing: border-box;
     position: relative;
     padding: 17rpx 0;
-    height: 600rpx;
+    /* height: 600rpx; */
+    height: calc(100vh - 513rpx);    
 }
 
 .item, .week-label-row .week-label-item {
