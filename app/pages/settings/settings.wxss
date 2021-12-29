@@ -8,7 +8,8 @@
   width:65%;
 }
 .sv{
-  height: 560rpx;
+  height: calc(100vh - 650rpx);
+  /* height: 560rpx; */
 }
 .cls_showDPP{
   z-index:999;
