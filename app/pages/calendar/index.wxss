@@ -6,7 +6,7 @@
 }
 
 .mySwiper {
-    height: calc(100vh - 513rpx);
+    height: calc(100vh - 533rpx);
     /* height: 600rpx; */
     position: relative;
 }
