@@ -5,7 +5,7 @@
     position: absolute;
     /* top: 5%;     */
     left: 5%;
-    font-size: medium;
+    font-size: small;
 }
 
 .bottom_mottosMiddle {
@@ -13,14 +13,14 @@
     position: absolute;
     top: 30%;    
     left: 5%;
-    font-size: medium; 
+    font-size: small; 
 }
 .bottom_mottosBottom {
     z-index: 100;
     position: absolute; 
     top: 60%  ; 
     left: 5%;
-    font-size: medium; 
+    font-size: small; 
 }
 .sk_weui-media-box__desc{
     line-height: 1.4;
