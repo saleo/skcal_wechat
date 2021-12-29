@@ -80,7 +80,7 @@
   
   box-sizing: border-box;
   padding: 17rpx;
-  height: 560rpx;
+  height: calc(100vh - 513rpx);  /* height: 560rpx; */
 }
 .weui-tabs-bar__wrp {
   border-bottom: 1px solid #eee;

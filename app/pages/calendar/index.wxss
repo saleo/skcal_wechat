@@ -44,7 +44,7 @@
     position: relative;
     padding: 17rpx 0;
     /* height: 600rpx; */
-    height: calc(100vh - 513rpx);    
+    height: calc(100vh - 533rpx);    
 }
 
 .item, .week-label-row .week-label-item {
