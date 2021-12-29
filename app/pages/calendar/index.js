@@ -107,7 +107,7 @@ Component({
                 // 滑动结束后，自动设置日期
                 if (evt.detail.source == "touch") {
                     let dateToset = "auto",todayYMD=getToday();
-                    if (todayYMD[1] == calendar.currentMonth){
+                    if (todayYMD[1] == calendar.currentMonth && todayYMD[0] == calendar.currentYear){
                         dateToset = todayYMD.join("/")
                     }
                                         

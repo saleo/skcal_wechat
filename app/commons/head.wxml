@@ -1,6 +1,6 @@
 <template name="head">
     <view class='banner'>
-        <block wx:if="{{year=='2020'||year=='2021'}}">
+        <block wx:if="{{year=='2020'||year=='2021'||year=='2022'}}">
             <text class="banner_text">{{month}}月</text>
             <image src="../../resources/sk{{year}}.png" mode="widthFix" class="banner_image"/>
         </block>

@@ -1,6 +1,6 @@
 <template name="foot_mottos">
   <view class='bottom'>
-        <block wx:if="{{year=='2020'||year=='2021'}}">
+        <block wx:if="{{year=='2020'||year=='2021'||year=='2022'}}">
             <text class="bottom_mottosTop" bindtap="mottosDigestTap"> {{mottos_digest['y'+year][month][0]}}\n</text>
             <text class="bottom_mottosMiddle" bindtap="mottosDigestTap"> {{mottos_digest['y'+year][month][1]}}\n</text>
             <text class="bottom_mottosBottom" bindtap="mottosDigestTap"> {{mottos_digest['y'+year][month][2]}}</text>
