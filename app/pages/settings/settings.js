@@ -114,6 +114,21 @@ Page({
     getApp().firstRun =false
   },
 
+  onShareAppMessage()
+  {
+      const promise = new Promise(resolve => {
+          setTimeout(() => {
+            resolve({
+              title: '寿康日历小程序-自定义戒期'
+            })
+          }, 2000)
+        })
+        return {
+          title: '寿康日历小程序-自定义戒期',
+          path: '/pages/settings/settings',
+        }
+  },    
+
   tapAllChkbox: function() {
     if (this.data.avsList.length==0) return;
     

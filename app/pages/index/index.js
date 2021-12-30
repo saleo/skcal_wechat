@@ -48,6 +48,20 @@ Page({
           }
         })
     },
+    onShareAppMessage()
+    {
+        const promise = new Promise(resolve => {
+            setTimeout(() => {
+              resolve({
+                title: '寿康日历小程序首页'
+              })
+            }, 2000)
+          })
+          return {
+            title: '寿康日历小程序首页',
+            path: '/pages/index/index',
+          }
+    },
 
     change(evt) {
         this.setData({

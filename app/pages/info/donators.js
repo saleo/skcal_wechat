@@ -23,6 +23,21 @@ Page({
 
   },
 
+  onShareAppMessage()
+  {
+      const promise = new Promise(resolve => {
+          setTimeout(() => {
+            resolve({
+              title: '寿康日历小程序-芳名录'
+            })
+          }, 2000)
+        })
+        return {
+          title: '寿康日历小程序-芳名录',
+          path: '/pages/info/donators',
+        }
+  },  
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

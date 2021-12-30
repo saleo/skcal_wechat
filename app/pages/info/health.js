@@ -191,6 +191,21 @@ Page({
     this.setData({tabs})
   },
 
+  onShareAppMessage()
+  {
+      const promise = new Promise(resolve => {
+          setTimeout(() => {
+            resolve({
+              title: '寿康日历小程序-身心健康'
+            })
+          }, 2000)
+        })
+        return {
+          title: '寿康日历小程序-身心健康',
+          path: '/pages/info/health',
+        }
+  },  
+
   onTabCLick(e) {
     const index = e.detail.index
     this.setData({activeTab: index})

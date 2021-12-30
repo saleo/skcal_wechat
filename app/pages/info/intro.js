@@ -47,6 +47,21 @@ Page({
     this.setData({tabs})
   },
 
+  onShareAppMessage()
+  {
+      const promise = new Promise(resolve => {
+          setTimeout(() => {
+            resolve({
+              title: '寿康日历小程序介绍'
+            })
+          }, 2000)
+        })
+        return {
+          title: '寿康日历小程序介绍',
+          path: '/pages/info/intro',
+        }
+  },
+
   onTabCLick(e) {
     const index = e.detail.index
     this.setData({activeTab: index})
