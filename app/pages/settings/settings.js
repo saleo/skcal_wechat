@@ -129,6 +129,11 @@ Page({
         }
   },    
 
+  onShareTimeline()
+  {
+
+  } ,
+   
   tapAllChkbox: function() {
     if (this.data.avsList.length==0) return;
     
@@ -263,16 +268,26 @@ Page({
   fn_save: function() {
     var b1=false,b2=false;
     let avsListInFun=this.data.avsList,  UIDsInFun=this.data.UIDs,opInFun=this.data.operate;
-    for (const avs of avsListInFun) {
-      b1=avs['whomforIdx']==this.data.whomforIdx && avs['whatforIdx']==this.data.whatforIdx;
-      b2=avs['chinaMonthIdx']==this.data.chinaMonthIdx && avs['chinaDayIdx']==this.data.chinaDayIdx;
-      if ((b1 && b2) || (b1 && opInFun == 'a')) {
-        this.setData({
-          showDuplicateWarning:true
-        });
-        return;
-      }
-    }
+    // for (const avs of avsListInFun) {
+    //   b1=avs['whomforIdx']==this.data.whomforIdx && avs['whatforIdx']==this.data.whatforIdx;
+    //   b2=avs['chinaMonthIdx']==this.data.chinaMonthIdx && avs['chinaDayIdx']==this.data.chinaDayIdx;
+    //   console.log('b1:', b1);
+    //   console.log('b2:', b2);
+    //   console.log('avs[\'whomforIdx\']:', avs['whomforIdx']);
+    //   console.log('this.data.whomforIdx:', this.data.whomforIdx);
+    //   console.log('avs[\'whatforIdx\']:', avs['whatforIdx']);
+    //   console.log('this.data.whatforIdx:', this.data.whatforIdx);
+    //   console.log('avs[\'chinaMonthIdx\']:', avs['chinaMonthIdx']);
+    //   console.log('this.data.chinaMonthIdx:', this.data.chinaMonthIdx);
+    //   console.log('avs[\'chinaDayIdx\']:', avs['chinaDayIdx']);
+    //   console.log('this.data.chinaDayIdx:', this.data.chinaDayIdx);
+    //   if ((b1 && b2) || (b1 && opInFun == 'a')) {
+    //     this.setData({
+    //       showDuplicateWarning:true
+    //     });
+    //     return;
+    //   }
+    // }
 
     if (opInFun=='a'){
       let uidNext=new Date().getTime()
