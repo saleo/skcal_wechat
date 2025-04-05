@@ -1,8 +1,5 @@
 {
   "description": "项目配置文件",
-  "packOptions": {
-    "ignore": []
-  },
   "setting": {
     "urlCheck": true,
     "es6": true,
@@ -22,8 +19,6 @@
     "uploadWithSourceMap": true,
     "compileHotReLoad": true,
     "useMultiFrameRuntime": true,
-    "useApiHook": true,
-    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -36,33 +31,23 @@
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true
+    "minifyWXSS": true,
+    "ignoreUploadUnusedFiles": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.15.0",
-  "appid": "wx0dcb7bad1ed241ee",
-  "projectname": "skcal_wechat",
-  "debugOptions": {
-    "hidedInDevtools": []
-  },
-  "isGameTourist": false,
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "cloudbaseRoot": "cloudbase/",
-  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
-  "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
-      "list": []
-    },
-    "game": {
-      "currentL": -1,
-      "list": []
-    },
-    "miniprogram": {
-      "list": []
-    }
-  }
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "libVersion": "3.0.2",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "appid": "wx0dcb7bad1ed241ee"
 }
